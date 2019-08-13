@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-08-13T10:37:31.882Z</updated>
+  <updated>2019-08-13T18:49:00.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,16 +21,16 @@
     <link href="http://yoursite.com/2019/08/13/just-one-year/"/>
     <id>http://yoursite.com/2019/08/13/just-one-year/</id>
     <published>2019-08-13T10:19:50.000Z</published>
-    <updated>2019-08-13T10:37:31.882Z</updated>
+    <updated>2019-08-13T18:49:00.000Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://i.loli.net/2019/08/13/8xzAhus1pDJ24rB.jpg" alt="dva爱你哟"></p><h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><p><a href="www.baidu.com">百度一下</a></p>]]></content>
+    <content type="html"><![CDATA[<blockquote><pre><code># 前言</code></pre><p>​    <strong>不知不觉已经来轻大一年了，去年的我还对编程懵懂无知，曾经为自己下了一个IDE在控制台上输出了“hello world”而开心不已，如今我已经开始写接口文档，进行前后端的分离开发。是时候在一个深夜(凌晨两点)去回忆一下，这一年的日子，去想想得失，想想时间带来了什么</strong></p></blockquote><hr><p><img src="https://i.loli.net/2019/08/13/eZx8HOj4bs95of6.jpg" alt="梦想"></p><h2 id="去年暑假"><a href="#去年暑假" class="headerlink" title="去年暑假"></a>去年暑假</h2><p>​    <strong>为什么选做一个程序员呢？可能比较喜欢搞点好东西，获取一些酷酷的软件、插件就像如同获得了宝藏一样，让我开心不已，经常为了折腾某一个软件去折腾好几天(比如搞这个花里胡哨的博客折腾了我3天)。确定了想要学软件后，我开始私聊了一些学长咨询。可能这也是一切的起点吧，我知道了当时学校有一个实验室叫软件创新基地。当时的我就立志想进软创。故事就由此展开了。</strong><br>​    <strong>开始去B站上找了浙江大学的视频看，还傻傻的拿了笔记本写了笔记，后来因为去打工，算是搁置了，只看到了循环？之后打工的经历或许也改变了我，它让我变得现实了，待人接物也大不相同了。</strong></p><hr><h2 id="初识-（9月-11月"><a href="#初识-（9月-11月" class="headerlink" title="初识  （9月-11月)"></a>初识  （9月-11月)</h2><p>​    <strong>一切都那么新鲜，对什么事情都充满了好奇，什么都想尝试，比如吃一口苹果。这一次我为自己的新鲜感与欠妥当付出了代价，这个甜甜的苹果的滋味知道如今仍然在嘴中回荡只是略带苦涩。可一切都没有重来的余地，何况曾今的*也给过我满嘴的芬芳。</strong><br>​    <strong>聊些技术有关的吧。在知道软创有考核时，当时被安利买了 《C prime plus》的我每天都在6点钟去看书，默默为它做准备，是这一年来去图书馆最勤的时候。如我所愿，我通过了面试。可这不意味着安稳，一次一次考核，身边的空位开始变多，不敢松懈，不敢停下。一本厚厚的书也被我做足了笔记，没有电脑就自己推演结果，有电脑就在电脑上执行一次。一步一步，到了指针等什么乱七八糟的东西，令人头疼、头秃。之后进行了C语言实训项目的提前编程。说实话，刚开始的时候，我大概有 3、4天都不知道从何下手，翻翻CSDN、问问谷歌。先编写了骚气的功能界面(唉，骚气慢慢的我)，可是输入的验证却难住了我，判断用户的输入，进行提示反馈。从百度的加上我自己考虑的，大概脑子里有个谱了，添加、显示、更新、删除，最开始的CRUD的实现。万事开头难，这个项目费事程度比我以后碰到bug解决时间都长，可一切都值得的。</strong></p><p><img src="https://i.loli.net/2019/08/13/8xzAhus1pDJ24rB.jpg" alt="dva爱你哟"></p><hr>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2019/08/13/8xzAhus1pDJ24rB.jpg&quot; alt=&quot;dva爱你哟&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;超链接&quot;&gt;&lt;a href=&quot;#超链接&quot; class=&quot;headerlink&quot; title=&quot;超链接&quot;
+        &lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;# 前言&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;​    &lt;strong&gt;不知不觉已经来轻大一年了，去年的我还对编程懵懂无知，曾经为自己下了一个IDE在控制台上输出了“hello world”而开心不已，如今我已经开始写接口文档，进行前后端
       
     
     </summary>
