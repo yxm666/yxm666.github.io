@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-08-13T02:20:29.241Z</updated>
+  <updated>2019-08-13T10:23:18.152Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>just one year</title>
+    <link href="http://yoursite.com/2019/08/13/just-one-year/"/>
+    <id>http://yoursite.com/2019/08/13/just-one-year/</id>
+    <published>2019-08-13T10:19:50.000Z</published>
+    <updated>2019-08-13T10:23:18.152Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://i.loli.net/2019/08/13/8xzAhus1pDJ24rB.jpg" alt="dva爱你哟"></p><h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><p><a href="www.baidu.com">百度一下</a></p><h3 id="图片测试"><a href="#图片测试" class="headerlink" title="图片测试"></a>图片测试</h3><p><img src="https://user-gold-cdn.xitu.io/2019/8/13/16c895235c26bc5b?w=2560&h=1080&f=jpeg&s=1919584" alt="wallhaven-zm5vgy.jpg"></p><p><img src="https://i.loli.net/2019/08/13/eZx8HOj4bs95of6.jpg" alt="wallhaven-r2jje7.jpg"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2019/08/13/8xzAhus1pDJ24rB.jpg&quot; alt=&quot;dva爱你哟&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;超链接&quot;&gt;&lt;a href=&quot;#超链接&quot; class=&quot;headerlink&quot; title=&quot;超链接&quot;
+      
+    
+    </summary>
+    
+      <category term="感悟" scheme="http://yoursite.com/categories/%E6%84%9F%E6%82%9F/"/>
+    
+    
+      <category term="感悟" scheme="http://yoursite.com/tags/%E6%84%9F%E6%82%9F/"/>
+    
+      <category term="编程" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
