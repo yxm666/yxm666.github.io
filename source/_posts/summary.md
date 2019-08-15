@@ -29,7 +29,7 @@ Categories:
 
 ## 框架学习之SSM框架
 
- 	**作为一个9102年学框架的后端Java开发人员，当然要从SSM框架学起(~~学校还在教着SSH~~)，SSM框架即为Spring、SPring MVC、Mybatis。框架集由Spring、MyBatis两个开源框架整合而成（SpringMVC是Spring中的部分内容）。常作为数据源较简单的web项目的框架。**
+​	**作为一个9102年学框架的后端Java开发人员，当然要从SSM框架学起(~~学校还在教着SSH~~),SSM框架即为Spring、SPring MVC、Mybatis。框架集由Spring、MyBatis两个开源框架整合而成（SpringMVC是Spring中的部分内容）。常作为数据源较简单的web项目的框架。**
 
 ### Spring
 
@@ -126,4 +126,3 @@ Categories:
 ## 总结
 
 > **暂时先大概的说下这2个后端框架吧，只是大概的讲讲这些框架的有什么作用以及它们的应用，之后再写写那些中间件,溜啦😉😉😉😉~~~~**
-
