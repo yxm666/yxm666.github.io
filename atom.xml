@@ -5,9 +5,9 @@
   <subtitle>读书 + 赚钱 + 健身 = 生活</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://yxm666.github.io/"/>
   <updated>2019-08-15T11:19:00.173Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://yxm666.github.io/</id>
   
   <author>
     <name>遠見卓識</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Holiday summary(一)</title>
-    <link href="http://yoursite.com/2019/08/15/summary/"/>
-    <id>http://yoursite.com/2019/08/15/summary/</id>
+    <link href="http://yxm666.github.io/2019/08/15/summary/"/>
+    <id>http://yxm666.github.io/2019/08/15/summary/</id>
     <published>2019-08-15T07:40:34.000Z</published>
     <updated>2019-08-15T11:19:00.173Z</updated>
     
@@ -36,16 +36,16 @@
     </summary>
     
     
-      <category term="感悟" scheme="http://yoursite.com/tags/%E6%84%9F%E6%82%9F/"/>
+      <category term="感悟" scheme="http://yxm666.github.io/tags/%E6%84%9F%E6%82%9F/"/>
     
-      <category term="总结" scheme="http://yoursite.com/tags/%E6%80%BB%E7%BB%93/"/>
+      <category term="总结" scheme="http://yxm666.github.io/tags/%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
   <entry>
     <title>just one year</title>
-    <link href="http://yoursite.com/2019/08/13/just-one-year/"/>
-    <id>http://yoursite.com/2019/08/13/just-one-year/</id>
+    <link href="http://yxm666.github.io/2019/08/13/just-one-year/"/>
+    <id>http://yxm666.github.io/2019/08/13/just-one-year/</id>
     <published>2019-08-13T10:19:50.000Z</published>
     <updated>2019-08-15T08:01:21.586Z</updated>
     
@@ -61,12 +61,12 @@
     
     </summary>
     
-      <category term="总结" scheme="http://yoursite.com/categories/%E6%80%BB%E7%BB%93/"/>
+      <category term="总结" scheme="http://yxm666.github.io/categories/%E6%80%BB%E7%BB%93/"/>
     
     
-      <category term="感悟" scheme="http://yoursite.com/tags/%E6%84%9F%E6%82%9F/"/>
+      <category term="感悟" scheme="http://yxm666.github.io/tags/%E6%84%9F%E6%82%9F/"/>
     
-      <category term="编程" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A8%8B/"/>
+      <category term="编程" scheme="http://yxm666.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
