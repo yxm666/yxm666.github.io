@@ -1,5 +1,5 @@
 ---
-
+ [just-one-year.md](just-one-year.md) 
 
 
 
@@ -14,8 +14,7 @@ tags:
 	- 感悟
 	- 编程
 categories: 
-	- 感悟
-images: "https://user-gold-cdn.xitu.io/2019/8/13/16c89f79ba4d809a?w=3840&h=2160&f=jpeg&s=9588295"
+	- 总结
 ---
 
 # 前言
