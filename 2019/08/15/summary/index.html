@@ -119,9 +119,8 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.loli.net/2019/08/15/fBMuJO9ct1ZxqbD.png">
 <meta property="og:image" content="https://i.loli.net/2019/08/15/jQL21EqZiHlVzSC.png">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7896890-a25782fb05f315de.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp%5D(https://upload-images.jianshu.io/upload_images/7896890-a25782fb05f315de.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp)">
 <meta property="og:image" content="https://spring.io/img/homepage/icon-spring-boot.svg">
-<meta property="og:updated_time" content="2019-08-15T11:03:46.443Z">
+<meta property="og:updated_time" content="2019-08-15T11:09:17.882Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="summary">
 <meta name="twitter:description" content="前言   如今，我在空调里吃着🍉，享受着别人马上要结束，而我刚刚开始的暑假生活。俗话说的好，假期都是用来超越别人的(我可不干这种事情，主要我太懒)。暑假一个月，说少不少，说多不多，但在平常的学习上很少有时间可以进行这样集中的编程知识的学习，不时成为锤炼自己的好时机。假期确实提升了很多，有必要进行一些梳理，进行一些总结。当然本次只是给一些技术的进行大概的总结，涉及的知识不会太深。  看看学了什么">
@@ -442,7 +441,7 @@
                 
               
 
-              <time title="创建时间：2019-08-15 15:40:34 / 修改时间：19:03:46" itemprop="dateCreated datePublished" datetime="2019-08-15T15:40:34+08:00">2019-08-15</time>
+              <time title="创建时间：2019-08-15 15:40:34 / 修改时间：19:09:17" itemprop="dateCreated datePublished" datetime="2019-08-15T15:40:34+08:00">2019-08-15</time>
             </span>
           
 
@@ -511,7 +510,8 @@
 <p><img src="https://i.loli.net/2019/08/15/fBMuJO9ct1ZxqbD.png" alt="暑假学习(后端)"></p>
 <hr>
 <h1 id="框架学习"><a href="#框架学习" class="headerlink" title="框架学习"></a>框架学习</h1><hr>
-<h2 id="框架学习之SSM框架"><a href="#框架学习之SSM框架" class="headerlink" title="框架学习之SSM框架"></a>框架学习之SSM框架</h2><pre><code>**作为一个9102年学框架的后端Java开发人员，当然要从SSM框架学起(~~学校还在教着SSH~~)，SSM框架即为Spring、SPring MVC、Mybatis。框架集由Spring、MyBatis两个开源框架整合而成（SpringMVC是Spring中的部分内容）。常作为数据源较简单的web项目的框架。**</code></pre><h3 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h3><p>　　<strong>Spring就像是整个项目中装配bean的大工厂，在配置文件中可以指定使用特定的参数去调用实体类的构造方法来实例化对象。也可以称之为项目中的粘合剂。</strong></p>
+<h2 id="框架学习之SSM框架"><a href="#框架学习之SSM框架" class="headerlink" title="框架学习之SSM框架"></a>框架学习之SSM框架</h2><p>​    <strong>作为一个9102年学框架的后端Java开发人员，当然要从SSM框架学起(<del>学校还在教着SSH</del>),SSM框架即为Spring、SPring MVC、Mybatis。框架集由Spring、MyBatis两个开源框架整合而成（SpringMVC是Spring中的部分内容）。常作为数据源较简单的web项目的框架。</strong></p>
+<h3 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h3><p>　　<strong>Spring就像是整个项目中装配bean的大工厂，在配置文件中可以指定使用特定的参数去调用实体类的构造方法来实例化对象。也可以称之为项目中的粘合剂。</strong></p>
 <p>　　<strong>Spring的核心思想是IoC（控制反转），面向切面编程就是 Spring 最为重要的功能之一了，在数据库事务中切面编程被广泛使用。即不再需要程序员去显式地<code>new</code>一个对象，而是让Spring框架帮你来完成这一切。</strong></p>
 <p>​    <strong>(<del>上面的粘贴自百度</del>)在我的理解里，Spring 主要分为2部分(IOC与AOP)，IOC就是帮你创建对象的，而不用每一个都自己new，通过依赖注入实现程序之间的解耦。框架的出现大多都是提供良好的封装性、实现程序的高内聚与低耦合。</strong></p>
 <p>​    <strong>AOP 即 Aspect Oriented Program 面向切面编程。首先，在面向切面编程的思想里面，把功能分为核心业务功能，和周边功能。</strong></p>
@@ -526,7 +526,6 @@
 <h4 id="我的理解"><a href="#我的理解" class="headerlink" title="我的理解"></a>我的理解</h4><p>  ​    <strong>AOP的是让开发人员更专注于核心业务的处理，而不用在核心业务的周围围绕着周边业务，增大代码量，让代码的可读性变差，耦合度增加。</strong></p>
 <p>  <img src="https://i.loli.net/2019/08/15/jQL21EqZiHlVzSC.png" alt="Spring特征"></p>
 <h3 id="Spring-MVC"><a href="#Spring-MVC" class="headerlink" title="Spring MVC"></a>Spring MVC</h3><p>​    <strong>SpringMVC在项目中拦截用户请求，它的核心Servlet即DispatcherServlet承担中介或是前台这样的职责，将用户请求通过HandlerMapping去匹配Controller，Controller就是具体对应请求所执行的操作。SpringMVC相当于SSH框架中struts。</strong></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/7896890-a25782fb05f315de.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp%5D(https://upload-images.jianshu.io/upload_images/7896890-a25782fb05f315de.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp)" alt="Spring MVC架构"></p>
 <p>​    <strong>pring MVC 是一个模型 - 视图 - 控制器（MVC）的Web框架建立在中央前端控制器servlet（DispatcherServlet），它负责发送每个请求到合适的处理程序，使用视图来最终返回响应结果的概念。Spring MVC 是 Spring 产品组合的一部分，它享有 Spring IoC容器紧密结合Spring松耦合等特点，因此它有Spring的所有优点。</strong></p>
 <h3 id="mybatis"><a href="#mybatis" class="headerlink" title="mybatis"></a><strong>mybatis</strong></h3><p>​    <strong>MyBatis 是一款优秀的持久层框架，它支持定制化 SQL、存储过程以及高级映射。MyBatis 避免了几乎所有的 JDBC 代码和手动设置参数以及获取结果集。MyBatis 可以使用简单的 XML 或注解来配置和映射原生类型、接口和 Java 的 POJO（Plain Old Java Objects，普通老式 Java 对象）为数据库中的记录。</strong></p>
 <p>　　<strong>mybatis是对jdbc的封装，它让数据库底层操作变的透明。mybatis的操作都是围绕一个sqlSessionFactory实例展开的。mybatis通过配置文件关联到各实体类的Mapper文件，Mapper文件中配置了每个类对数据库所需进行的sql语句映射。在每次与数据库交互时，通过sqlSessionFactory拿到一个sqlSession，再执行sql命令。</strong></p>
