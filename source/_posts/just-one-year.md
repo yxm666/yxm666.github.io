@@ -1,13 +1,4 @@
 ---
- [just-one-year.md](just-one-year.md) 
-
-
-
-
-
-
-
-
 title: just one year
 date: 2019-08-13 18:19:50
 tags:
