@@ -1,4 +1,5 @@
 ---
+
 title: holiday summary(3)
 date: 2019-08-20 18:24:55
 tags:
@@ -137,7 +138,7 @@ categoreies:
 
 
 
-**** 
+****
 
 ### **RabbitMQ**
 
@@ -164,7 +165,159 @@ categoreies:
 **ES=elaticsearch简写， Elasticsearch是一个开源的高扩展的分布式全文检索引擎，它可以近乎实时的存储、检索数据；本身扩展性很好，可以扩展到上百台服务器，处理PB级别的数据。** 
 **Elasticsearch也使用Java开发并使用Lucene作为其核心来实现所有索引和搜索的功能，但是它的目的是通过简单的RESTful API来隐藏Lucene的复杂性，从而让全文搜索变得简单。**
 
-​	
+****	
 
 
 
+## **工具**
+
+---
+
+>   **工具这里根据功能两两分组，讲解一下，就好啦。**
+
+
+
+### **Mybatis Plus & PageHelper**
+
+---
+
+	>​	**这两个工具都是对持久层框架Mybatis的增强，旨在简化持久层开发。**
+
+#### **Mybatis Plus**
+
+​	**对于SPring Boot，官方提供了Start，较好的整合了Mybatis Plus，直接在pom.xml中导入对应的依赖即可。**
+
+```xml
+<!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter -->
+<dependency>
+    <groupId>com.baomidou</groupId>
+    <artifactId>mybatis-plus-boot-starter</artifactId>
+    <version>3.1.2</version>
+</dependency>
+
+```
+
+**MyBatis-Plus（简称MP）是一个MyBatis的增强工具，在MyBatis的基础上只做增强不做改变，为简化开发、提高效率而生**
+
+#### **PageHelper**
+
+```xml
+<!-- https://mvnrepository.com/artifact/com.github.pagehelper/pagehelper-spring-boot-starter -->
+<dependency>
+    <groupId>com.github.pagehelper</groupId>
+    <artifactId>pagehelper-spring-boot-starter</artifactId>
+    <version>1.2.12</version>
+</dependency>
+```
+
+​	**为啥用这个插件呢？因为他代码实现分页就一行代码。在进行查询前插入一个静态方法即可。**
+
+**`PageHelper.startPage（pageNum ， pageSize`，这个方法就是类似我们数据库操作的limit start ， count**
+
+**就完事了！**
+
+
+
+### **Swagger2 && PostMan**
+
+---
+
+#### **Swagger2** 
+
+​	**Swagger是根据我们写的接口动态生成一个html界面，供前台测试用，他不仅可以看接口(这里推荐用restful风格的接口！！！！)的作用，最关键是可以进行测试（~~下面的一款是专门用来测接口的~~）。而且动态生成的页面，改代码的时候，直接改对应注解就行了，对于后端来说比较友好~~**
+
+​	**首先是引入依赖，在pom.xml文件中引入依赖。**
+
+```xml
+<!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
+<dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger2</artifactId>
+    <version>2.9.2</version>
+</dependency>
+```
+
+**然后是Swagger配置类**
+
+```java
+@Configuration
+@EnableSwagger2
+public class SwaggerConfig {
+
+    @Bean
+    public Docket docket() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .pathMapping("/")
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("cn.cxjd.demo.controller"))
+                .paths(PathSelectors.any())
+                .build().apiInfo(new ApiInfoBuilder()
+                        .title("轻大软创门户网站API文档")
+                        .description("含有3大模块接口:管理员模块，新闻模块，新闻分类模块")
+                        .version("1.0")
+                        .contact(new Contact("联系后端开发者", "", "877495283@qq.com"))
+                        .build());
+    }
+}
+```
+
+**配置类一定要写`@EnableSwagger2`这个注解哦，大概就是开启swagger的功能的意思吧。**
+
+```java
+@Api(value = "涉及用户的接口")
+@RestController
+public class UserController {
+    @Autowired
+    private UserService userService;
+
+    @PostMapping("/user")
+    @ApiOperation(value = "用户注册", notes = "传入user对象(包含username与password即可)")
+    @ApiImplicitParams({@ApiImplicitParam(name = "user", value = "用户实体", required = true,dataType = "User",paramType = "body")})
+    public RespBean addUser(@RequestBody User user) {
+        int register = userService.register(user);
+        if (register == 1) {
+            return new RespBean("error", "该用户名已存在");
+        } else if (register == 0) {
+            return new RespBean("success", "创建成功");
+        }
+        return null;
+    }
+```
+
+**具体的注解使用方法参考下[这篇博客](https://blog.csdn.net/xupeng874395012/article/details/68946676)**
+
+#### **postMan**
+
+ **postman是一款用来测试接口的软件，在Chrome中搜索下载就好了，具体就不在这里说了~~**
+
+
+
+### **FastJson && Druid**
+
+---
+
+  **来，先上一下这两个技术的maven依赖**
+
+```xml
+<!-- fastjson的依赖 -->
+<dependency>
+    <groupId>com.alibaba</groupId>
+    <artifactId>fastjson</artifactId>
+    <version>1.2.59</version>
+</dependency>
+
+<!-- druid 的依赖-->
+<dependency>
+    <groupId>com.alibaba</groupId>
+    <artifactId>druid</artifactId>
+    <version>1.1.19</version>
+</dependency>
+
+
+```
+
+  **从这依赖都可以看出来了，这属于阿里开发的东西喽，然后了解不多，都是跟着网上看的，网址放着，等开学用到了再仔细研究写心得好了。**
+
+**[W3C fastJson](https://www.w3cschool.cn/fastjson/)**
+
+**[druid教学](https://segmentfault.com/a/1190000013997259)**
