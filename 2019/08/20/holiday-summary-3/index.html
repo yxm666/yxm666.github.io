@@ -119,7 +119,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://p1.pstatp.com/large/37eb00020300d0856a0e">
 <meta property="og:image" content="http://p3.pstatp.com/large/37e8000557281bce894c">
-<meta property="og:updated_time" content="2019-08-20T11:57:16.027Z">
+<meta property="og:updated_time" content="2019-08-27T09:26:11.190Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="holiday summary(3)">
 <meta name="twitter:description" content="前言 ​    在快乐了几天后决定今天把假期总结的东西写完，看看剩的技术还挺多的，就稍微提提好了。肥宅快乐，嗝~  授权管理框架 Shiro架构与功能介筛 1.认证与授权相关基本概念 两个基本的概念 安全实体：系统需要保护的具体对象数据 权限：系统相关的功能操作，例如基本的CRUD Authentication：身份认证/登录，验证用户是不是拥有相应的身份； Authorization：授权，即权">
@@ -440,13 +440,23 @@
                 
               
 
-              <time title="创建时间：2019-08-20 18:24:55 / 修改时间：19:57:16" itemprop="dateCreated datePublished" datetime="2019-08-20T18:24:55+08:00">2019-08-20</time>
+              <time title="创建时间：2019-08-20 18:24:55" itemprop="dateCreated datePublished" datetime="2019-08-20T18:24:55+08:00">2019-08-20</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-27 17:26:11" itemprop="dateModified" datetime="2019-08-27T17:26:11+08:00">2019-08-27</time>
+              </span>
             
           
 
@@ -471,7 +481,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">4.4k</span>
+              <span title="本文字数">7.9k</span>
             </span>
           
 
@@ -483,7 +493,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">4 分钟</span>
+              <span title="阅读时长">7 分钟</span>
             </span>
           
 
@@ -580,7 +590,41 @@
 <p><strong>MongoDB是一个介于<a href="https://baike.baidu.com/item/关系数据库" target="_blank" rel="noopener">关系数据库</a>和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。它支持的数据结构非常松散，是类似<a href="https://baike.baidu.com/item/json" target="_blank" rel="noopener">json</a>的<a href="https://baike.baidu.com/item/bson" target="_blank" rel="noopener">bson</a>格式，因此可以存储比较复杂的数据类型。Mongo最大的特点是它支持的查询语言非常强大，其语法有点类似于面向对象的查询语言，几乎可以实现类似关系数据库单表查询的绝大部分功能，而且还支持对数据建立<a href="https://baike.baidu.com/item/索引" target="_blank" rel="noopener">索引</a>。</strong></p>
 <h3 id="laticsearch"><a href="#laticsearch" class="headerlink" title="laticsearch"></a><strong>laticsearch</strong></h3><hr>
 <p><strong>ES=elaticsearch简写， Elasticsearch是一个开源的高扩展的分布式全文检索引擎，它可以近乎实时的存储、检索数据；本身扩展性很好，可以扩展到上百台服务器，处理PB级别的数据。</strong><br><strong>Elasticsearch也使用Java开发并使用Lucene作为其核心来实现所有索引和搜索的功能，但是它的目的是通过简单的RESTful API来隐藏Lucene的复杂性，从而让全文搜索变得简单。</strong></p>
-<p>​    </p>
+<hr>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a><strong>工具</strong></h2><hr>
+<blockquote>
+<p>  <strong>工具这里根据功能两两分组，讲解一下，就好啦。</strong></p>
+</blockquote>
+<h3 id="Mybatis-Plus-amp-PageHelper"><a href="#Mybatis-Plus-amp-PageHelper" class="headerlink" title="Mybatis Plus &amp; PageHelper"></a><strong>Mybatis Plus &amp; PageHelper</strong></h3><hr>
+<pre><code>&gt;​    **这两个工具都是对持久层框架Mybatis的增强，旨在简化持久层开发。**</code></pre><h4 id="Mybatis-Plus"><a href="#Mybatis-Plus" class="headerlink" title="Mybatis Plus"></a><strong>Mybatis Plus</strong></h4><p>​    <strong>对于SPring Boot，官方提供了Start，较好的整合了Mybatis Plus，直接在pom.xml中导入对应的依赖即可。</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.baomidou<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-plus-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.1.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>MyBatis-Plus（简称MP）是一个MyBatis的增强工具，在MyBatis的基础上只做增强不做改变，为简化开发、提高效率而生</strong></p>
+<h4 id="PageHelper"><a href="#PageHelper" class="headerlink" title="PageHelper"></a><strong>PageHelper</strong></h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/com.github.pagehelper/pagehelper-spring-boot-starter --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.github.pagehelper<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>pagehelper-spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>​    <strong>为啥用这个插件呢？因为他代码实现分页就一行代码。在进行查询前插入一个静态方法即可。</strong></p>
+<p><strong><code>PageHelper.startPage（pageNum ， pageSize</code>，这个方法就是类似我们数据库操作的limit start ， count</strong></p>
+<p><strong>就完事了！</strong></p>
+<h3 id="Swagger2-amp-amp-PostMan"><a href="#Swagger2-amp-amp-PostMan" class="headerlink" title="Swagger2 &amp;&amp; PostMan"></a><strong>Swagger2 &amp;&amp; PostMan</strong></h3><hr>
+<h4 id="Swagger2"><a href="#Swagger2" class="headerlink" title="Swagger2"></a><strong>Swagger2</strong></h4><p>​    <strong>Swagger是根据我们写的接口动态生成一个html界面，供前台测试用，他不仅可以看接口(这里推荐用restful风格的接口！！！！)的作用，最关键是可以进行测试（<del>下面的一款是专门用来测接口的</del>）。而且动态生成的页面，改代码的时候，直接改对应注解就行了，对于后端来说比较友好~~</strong></p>
+<p>​    <strong>首先是引入依赖，在pom.xml文件中引入依赖。</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.9.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>然后是Swagger配置类</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableSwagger</span>2</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SwaggerConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Docket <span class="title">docket</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2)</span><br><span class="line">                .pathMapping(<span class="string">"/"</span>)</span><br><span class="line">                .select()</span><br><span class="line">                .apis(RequestHandlerSelectors.basePackage(<span class="string">"cn.cxjd.demo.controller"</span>))</span><br><span class="line">                .paths(PathSelectors.any())</span><br><span class="line">                .build().apiInfo(<span class="keyword">new</span> ApiInfoBuilder()</span><br><span class="line">                        .title(<span class="string">"轻大软创门户网站API文档"</span>)</span><br><span class="line">                        .description(<span class="string">"含有3大模块接口:管理员模块，新闻模块，新闻分类模块"</span>)</span><br><span class="line">                        .version(<span class="string">"1.0"</span>)</span><br><span class="line">                        .contact(<span class="keyword">new</span> Contact(<span class="string">"联系后端开发者"</span>, <span class="string">""</span>, <span class="string">"877495283@qq.com"</span>))</span><br><span class="line">                        .build());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>配置类一定要写<code>@EnableSwagger2</code>这个注解哦，大概就是开启swagger的功能的意思吧。</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Api</span>(value = <span class="string">"涉及用户的接口"</span>)</span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserService userService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@PostMapping</span>(<span class="string">"/user"</span>)</span><br><span class="line">    <span class="meta">@ApiOperation</span>(value = <span class="string">"用户注册"</span>, notes = <span class="string">"传入user对象(包含username与password即可)"</span>)</span><br><span class="line">    <span class="meta">@ApiImplicitParams</span>(&#123;<span class="meta">@ApiImplicitParam</span>(name = <span class="string">"user"</span>, value = <span class="string">"用户实体"</span>, required = <span class="keyword">true</span>,dataType = <span class="string">"User"</span>,paramType = <span class="string">"body"</span>)&#125;)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> RespBean <span class="title">addUser</span><span class="params">(@RequestBody User user)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> register = userService.register(user);</span><br><span class="line">        <span class="keyword">if</span> (register == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> RespBean(<span class="string">"error"</span>, <span class="string">"该用户名已存在"</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (register == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> RespBean(<span class="string">"success"</span>, <span class="string">"创建成功"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>具体的注解使用方法参考下<a href="https://blog.csdn.net/xupeng874395012/article/details/68946676" target="_blank" rel="noopener">这篇博客</a></strong></p>
+<h4 id="postMan"><a href="#postMan" class="headerlink" title="postMan"></a><strong>postMan</strong></h4><p> <strong>postman是一款用来测试接口的软件，在Chrome中搜索下载就好了，具体就不在这里说了~~</strong></p>
+<h3 id="FastJson-amp-amp-Druid"><a href="#FastJson-amp-amp-Druid" class="headerlink" title="FastJson &amp;&amp; Druid"></a><strong>FastJson &amp;&amp; Druid</strong></h3><hr>
+<p>  <strong>来，先上一下这两个技术的maven依赖</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- fastjson的依赖 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>fastjson<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.59<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- druid 的依赖--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>druid<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.1.19<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>  <strong>从这依赖都可以看出来了，这属于阿里开发的东西喽，然后了解不多，都是跟着网上看的，网址放着，等开学用到了再仔细研究写心得好了。</strong></p>
+<p><strong><a href="https://www.w3cschool.cn/fastjson/" target="_blank" rel="noopener">W3C fastJson</a></strong></p>
+<p><strong><a href="https://segmentfault.com/a/1190000013997259" target="_blank" rel="noopener">druid教学</a></strong></p>
 
       
     </div>
@@ -897,7 +941,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-text">前言</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#授权管理框架"><span class="nav-text">授权管理框架</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Shiro架构与功能介筛"><span class="nav-text">Shiro架构与功能介筛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring-Security简介"><span class="nav-text">Spring Security简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring-Security-简介"><span class="nav-text">Spring Security 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shiro-和-Spring-Security-比较"><span class="nav-text">Shiro 和 Spring Security 比较</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker-跟Docker能装的一些能用到的技术"><span class="nav-text">Docker 跟Docker能装的一些能用到的技术</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Redis"><span class="nav-text">Redis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RabbitMQ"><span class="nav-text">RabbitMQ</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MongoDB"><span class="nav-text">MongoDB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#laticsearch"><span class="nav-text">laticsearch</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-text">前言</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#授权管理框架"><span class="nav-text">授权管理框架</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Shiro架构与功能介筛"><span class="nav-text">Shiro架构与功能介筛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring-Security简介"><span class="nav-text">Spring Security简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring-Security-简介"><span class="nav-text">Spring Security 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shiro-和-Spring-Security-比较"><span class="nav-text">Shiro 和 Spring Security 比较</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker-跟Docker能装的一些能用到的技术"><span class="nav-text">Docker 跟Docker能装的一些能用到的技术</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Redis"><span class="nav-text">Redis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RabbitMQ"><span class="nav-text">RabbitMQ</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MongoDB"><span class="nav-text">MongoDB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#laticsearch"><span class="nav-text">laticsearch</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工具"><span class="nav-text">工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mybatis-Plus-amp-PageHelper"><span class="nav-text">Mybatis Plus &amp; PageHelper</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Mybatis-Plus"><span class="nav-text">Mybatis Plus</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PageHelper"><span class="nav-text">PageHelper</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Swagger2-amp-amp-PostMan"><span class="nav-text">Swagger2 &amp;&amp; PostMan</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Swagger2"><span class="nav-text">Swagger2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#postMan"><span class="nav-text">postMan</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FastJson-amp-amp-Druid"><span class="nav-text">FastJson &amp;&amp; Druid</span></a></li></ol></li></div>
             
 
           </div>
@@ -932,7 +976,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">19k</span>
+    <span title="站点总字数">23k</span>
   
 
   
@@ -943,7 +987,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">18 分钟</span>
+    <span title="站点阅读时长">21 分钟</span>
   
 </div>
 
