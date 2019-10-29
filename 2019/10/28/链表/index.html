@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+
+<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<script src="/live2d-widget/autoload.js"></script>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="https://i.loli.net/2019/08/13/ClItcruNUjDQOAb.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="https://i.loli.net/2019/08/13/WwaNPfvjFKH72Ek.png?v=7.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="前言 ​    高产似母猪，我又来更新我的博客，今天学了链表呢，说实话还是有点绕呢，现在开始吧，奥利给！！！！ 链表 链表简介​    单链表是有序的列表，但地址不一定是相连的。 小结: 1) 链表是以节点的方式来存储,是链式存储2) 每个节点包含 data 域， next 域:指向下一个节点.3) 如图:发现链表的各个节点不一定是连续存储.4) 链表分带头节点的链表和没有头节点的链表，根据实际的">
+<meta name="keywords" content="数据结构与算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="链表">
+<meta property="og:url" content="http://yxm666.github.io/2019/10/28/链表/index.html">
+<meta property="og:site_name" content="Silence">
+<meta property="og:description" content="前言 ​    高产似母猪，我又来更新我的博客，今天学了链表呢，说实话还是有点绕呢，现在开始吧，奥利给！！！！ 链表 链表简介​    单链表是有序的列表，但地址不一定是相连的。 小结: 1) 链表是以节点的方式来存储,是链式存储2) 每个节点包含 data 域， next 域:指向下一个节点.3) 如图:发现链表的各个节点不一定是连续存储.4) 链表分带头节点的链表和没有头节点的链表，根据实际的">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/10/28/16e12e59c1a7770b?w=952&h=762&f=png&s=245415">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/10/28/16e130b080cf9628?w=1142&h=374&f=png&s=93040">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/10/29/16e15107449377a8?w=1636&h=706&f=png&s=462594">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/10/29/16e15128024e2fe4?w=1238&h=576&f=png&s=267965">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/10/29/16e151567aa9e6bf?w=1484&h=554&f=png&s=332784">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/10/29/16e1529a9be2cd78?w=970&h=530&f=png&s=238434">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/10/29/16e152a41dcaaa57?w=1298&h=708&f=png&s=455599">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/10/29/16e152c2925ea660?w=1584&h=528&f=png&s=440239">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/10/29/16e153208378a0c3?w=1914&h=470&f=png&s=402133">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/10/29/16e153f7e9698797?w=606&h=434&f=png&s=89486">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/10/29/16e15419d87eee57?w=1500&h=792&f=png&s=465655">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/10/29/16e154570487fb0f?w=1408&h=654&f=png&s=390943">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/10/29/16e154885984e02f?w=1620&h=718&f=png&s=525301">
+<meta property="og:updated_time" content="2019-10-29T02:14:04.522Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="链表">
+<meta name="twitter:description" content="前言 ​    高产似母猪，我又来更新我的博客，今天学了链表呢，说实话还是有点绕呢，现在开始吧，奥利给！！！！ 链表 链表简介​    单链表是有序的列表，但地址不一定是相连的。 小结: 1) 链表是以节点的方式来存储,是链式存储2) 每个节点包含 data 域， next 域:指向下一个节点.3) 如图:发现链表的各个节点不一定是连续存储.4) 链表分带头节点的链表和没有头节点的链表，根据实际的">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2019/10/28/16e12e59c1a7770b?w=952&h=762&f=png&s=245415">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Silence" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="http://yxm666.github.io/2019/10/28/链表/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>链表 | Silence</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	<a href="https://github.com/yxm666" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Silence</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">读书 + 赚钱 + 健身 = 生活</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">5</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">3</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">8</span></a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yxm666.github.io/2019/10/28/链表/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="遠見卓識">
+      <meta itemprop="description" content="前路漫漫  當克己  當慎獨">
+      <meta itemprop="image" content="https://i.loli.net/2019/08/13/NbiJ5afDq8RA1m7.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Silence">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">链表
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-28 22:55:07" itemprop="dateCreated datePublished" datetime="2019-10-28T22:55:07+08:00">2019-10-28</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-10-29 10:14:04" itemprop="dateModified" datetime="2019-10-29T10:14:04+08:00">2019-10-29</time>
+              </span>
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span title="本文字数">18k</span>
+            </span>
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span title="阅读时长">16 分钟</span>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><hr>
+<p>​    高产似母猪，我又来更新我的博客，今天学了链表呢，说实话还是有点绕呢，现在开始吧，奥利给！！！！</p>
+<h1 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h1><hr>
+<h2 id="链表简介"><a href="#链表简介" class="headerlink" title="链表简介"></a>链表简介</h2><p>​    单链表是有序的列表，但地址不一定是相连的。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/10/28/16e12e59c1a7770b?w=952&h=762&f=png&s=245415" alt="单链表在计算机内存中的储存情况"><br>小结:</p>
+<p>1) 链表是以节点的方式来存储,是链式存储<br>2) 每个节点包含 data 域， next 域:指向下一个节点.<br>3) 如图:发现链表的各个节点不一定是连续存储.<br>4) 链表分带头节点的链表和没有头节点的链表，根据实际的需求来确定 </p>
+<p>单链表(带头结点) 逻辑结构示意图如下</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/10/28/16e130b080cf9628?w=1142&h=374&f=png&s=93040" alt="单链表逻辑结构"></p>
+<h2 id="单链表的应用实例"><a href="#单链表的应用实例" class="headerlink" title="单链表的应用实例"></a>单链表的应用实例</h2><p>​    使用带head头的单向链表实现 - 水浒英雄排行榜管理完成对英雄人物的增删改查操作。</p>
+<p>1、 第一种方法在在添加英雄时，直接添加到链表的尾部</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/10/29/16e15107449377a8?w=1636&h=706&f=png&s=462594" alt="添加到链表的尾部"></p>
+<p>2、 第二种方式在添加英雄时，根据排名将英雄插入到指定位置(如果有这个排名，则添加失败，并给出提示)</p>
+<p>思路的分析示意图:</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/10/29/16e15128024e2fe4?w=1238&h=576&f=png&s=267965" alt="添加到指定位置"></p>
+<p>3、 1）先找到该节点，通过遍历 2)temp.name = newHeroNode.name;temp.nickname = newHeroNode.nickname</p>
+<p>4、 删除结点2</p>
+<p>思路分析的示意图:</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/10/29/16e151567aa9e6bf?w=1484&h=554&f=png&s=332784" alt="删除结点"></p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.cxjd.LinkedList;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 〈一句话功能简述〉&lt;br&gt;</span></span><br><span class="line"><span class="comment"> * 〈HeroNode 作为链表的一个节点〉</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> yxm</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019-10-26</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> 1.0.0</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HeroNode</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 序号</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> no;</span><br><span class="line">    <span class="comment">// 英雄名称</span></span><br><span class="line">    <span class="keyword">public</span> String name;</span><br><span class="line">    <span class="comment">// 英雄昵称</span></span><br><span class="line">    <span class="keyword">public</span> String nickname;</span><br><span class="line">    <span class="comment">// 指向下一个节点</span></span><br><span class="line">    <span class="keyword">public</span> HeroNode next;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">HeroNode</span><span class="params">(<span class="keyword">int</span> no, String name, String nickname)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.no = no;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.nickname = nickname;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"HeroNode&#123;"</span> +</span><br><span class="line">                <span class="string">"no="</span> + no +</span><br><span class="line">                <span class="string">", name='"</span> + name + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", nickname='"</span> + nickname + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.cxjd.LinkedList;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 〈一句话功能简述〉&lt;br&gt;</span></span><br><span class="line"><span class="comment"> * 〈链表的实现〉</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> yxm</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019-10-26</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> 1.0.0</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 1) 链表是以节点的方式来存储,是链式存储</span></span><br><span class="line"><span class="comment"> * 2) 每个节点包含 data 域， next 域:指向下一个节点.</span></span><br><span class="line"><span class="comment"> * 3) 如图:发现链表的各个节点不一定是连续存储.</span></span><br><span class="line"><span class="comment"> * 4) 链表分带头节点的链表和没有头节点的链表，根据实际的需求来确定</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LinkedList</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 先初始化一个头结点 头结点不要动 不存放具体的数据</span></span><br><span class="line">    <span class="keyword">private</span> HeroNode head = <span class="keyword">new</span> HeroNode(<span class="number">0</span>, <span class="string">""</span>, <span class="string">""</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//添加节点到单向链表</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    1、 找到当前链表的最后节点</span></span><br><span class="line"><span class="comment">    2、 将最后这个节点的next指向新的节点</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(HeroNode heroNode)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 因为head 作为头结点 不能移动 因此我们需要一个辅助指针遍历 temp</span></span><br><span class="line">        HeroNode temp = head;</span><br><span class="line">        <span class="comment">// 遍历链表，找到最后 如果后续指针不为空 则继续遍历</span></span><br><span class="line">        <span class="keyword">while</span> (temp.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="comment">// 将temp后移</span></span><br><span class="line">            temp = temp.next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 当退出while 循环时， temp就指向了链表的最后</span></span><br><span class="line">        <span class="comment">// 此时 将要加入的结点放入到temp的 next域 中</span></span><br><span class="line">        temp.next = heroNode;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 第二种方法在添加英雄时，根据英雄的排名将英雄插入到指定位置 如果有这个排名则显示添加失败 并给出提示</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addbyOrder</span><span class="params">(HeroNode heroNode)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 因为头节点不能动，因此我们让然通过一个辅助指针来找到添加的位置</span></span><br><span class="line">        <span class="comment">// 因为单链表 我们找的temp是位于添加位置前的一个节点 否则插入不了</span></span><br><span class="line">        <span class="comment">// 添加节点 兴许一个节点都没 所以不需要后移</span></span><br><span class="line">        HeroNode temp = head;</span><br><span class="line">        <span class="comment">// flag标志添加的标志是否存在 默认为false</span></span><br><span class="line">        <span class="keyword">boolean</span> flag = <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (temp.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="comment">// 位置摘到 就在 temp的后面</span></span><br><span class="line">            <span class="keyword">if</span> (temp.next.no &gt; heroNode.no) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">                <span class="comment">// 说明希望添加的hearNode 的编号已经存在</span></span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (temp.next.no == heroNode.no) &#123;</span><br><span class="line">                flag = <span class="keyword">true</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 后移 遍历当前链表</span></span><br><span class="line">            temp = temp.next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 判断flag的值</span></span><br><span class="line">        <span class="keyword">if</span> (flag) &#123;</span><br><span class="line">            <span class="comment">// 表明 改heroNode的 No已经存在无法添加</span></span><br><span class="line">            System.out.printf(<span class="string">"准备插入的英雄编号%d 已经存在了 不能加入\n"</span>, heroNode.no);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 插插入到链表中,temp 的后面 注意插入的顺序</span></span><br><span class="line">            <span class="comment">// 插入等操作先不动 temp 先动 插入的元素 将heroNode 放到 temp的 next 现在有两个元素在 temp的后面</span></span><br><span class="line">            heroNode.next = temp.next;</span><br><span class="line">            <span class="comment">// 现在在切断 temp与原本的后面的元素的联系</span></span><br><span class="line">            temp.next = heroNode;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 修改结点的信息，根据no编号来修改 no不能做修改</span></span><br><span class="line">    <span class="comment">// 根据newHeroNode 的 no来修改</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">update</span><span class="params">(HeroNode newHeroNode)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 判断是否为空</span></span><br><span class="line">        <span class="keyword">if</span> (head.next == <span class="keyword">null</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">"链表为空"</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 找到需要修改的结点 根据 no编号</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 定义一个辅助变量</span></span><br><span class="line">        HeroNode temp = head.next;</span><br><span class="line">        <span class="comment">// 表示是否找到了该结点</span></span><br><span class="line">        <span class="keyword">boolean</span> flag = <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">while</span> (temp != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (temp.no == newHeroNode.no) &#123;</span><br><span class="line">                <span class="comment">// 找到 改变标志</span></span><br><span class="line">                flag = <span class="keyword">true</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            temp = temp.next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 根据 flag 判断是否找到要修改的节点</span></span><br><span class="line">        <span class="keyword">if</span> (flag) &#123;</span><br><span class="line">            temp.name = newHeroNode.name;</span><br><span class="line">            temp.nickname = newHeroNode.nickname;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.printf(<span class="string">"没有找到 编号%d 的节点，不能修改"</span>, newHeroNode.no);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//删除节点</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    1、 head不能动 因此我们需要一个temp辅助节点找到待删除节点的前一个节点</span></span><br><span class="line"><span class="comment">    2、 说明我们在比较时 是 temp.next.no 与 需要删除的节点的no进行比较</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">del</span><span class="params">(<span class="keyword">int</span> no)</span> </span>&#123;</span><br><span class="line">        HeroNode temp = head;</span><br><span class="line">        <span class="comment">//标志是否找到待删除的节点</span></span><br><span class="line">        <span class="keyword">boolean</span> flag = <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (temp.next == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (temp.next.no == no) &#123;</span><br><span class="line">                <span class="comment">// 找到的待删除节点的前一个节点temp</span></span><br><span class="line">                flag = <span class="keyword">true</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//  temp后移</span></span><br><span class="line">            temp = temp.next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (flag) &#123;</span><br><span class="line">            <span class="comment">// 找到 可以删除</span></span><br><span class="line">            temp.next = temp.next.next;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.printf(<span class="string">"要删除的 %d 节点不存在\n"</span>,no);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 显示链表</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">list</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 判断链表是否为空</span></span><br><span class="line">        <span class="keyword">if</span> (head.next == <span class="keyword">null</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">"链表为空"</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 因为头结点不能动 因此我们需要一个辅助节点进行遍历</span></span><br><span class="line">        HeroNode temp = head.next;</span><br><span class="line">        <span class="keyword">while</span> (temp != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="comment">// 输出节点信息</span></span><br><span class="line">            System.out.println(temp);</span><br><span class="line">            temp = temp.next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="单链表面试题"><a href="#单链表面试题" class="headerlink" title="单链表面试题"></a>单链表面试题</h2><h3 id="去单链表中有效节点的个数"><a href="#去单链表中有效节点的个数" class="headerlink" title="去单链表中有效节点的个数"></a>去单链表中有效节点的个数</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 求单链表中有效结点的个数</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 方法: 获取单链表的节点的个数(如果是带头结点的链表，需要不统计头结点)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getLength</span><span class="params">(HeroNode head)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 空链表</span></span><br><span class="line">        <span class="keyword">if</span> (head.next == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> length = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">//  定义一个辅助变量 这里没有统计头结点</span></span><br><span class="line">        HeroNode cur = head.next;</span><br><span class="line">        <span class="keyword">while</span> (cur != <span class="keyword">null</span>) &#123;</span><br><span class="line">            length++;</span><br><span class="line">            <span class="comment">// 将cur向后移</span></span><br><span class="line">            cur = cur.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> length;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="查找单链表中的倒数第K个结点"><a href="#查找单链表中的倒数第K个结点" class="headerlink" title="查找单链表中的倒数第K个结点"></a>查找单链表中的倒数第K个结点</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">/ 查找单链表中的倒数第K个结点</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    1、 编写一个方法 接受 head 节点 同时接受一个index</span></span><br><span class="line"><span class="comment">    2、 index 表示倒数第index 个节点</span></span><br><span class="line"><span class="comment">    3、 先把链表从头到尾遍历 得到链表的总长度 getLength</span></span><br><span class="line"><span class="comment">    4、 得到size后 我们从链表的第一个开始遍历(size-index)个 就可以得到</span></span><br><span class="line"><span class="comment">    5、 如果找到了，则返回该结点，否则返回null</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> HeroNode <span class="title">findLastIndexNode</span><span class="params">(HeroNode head, <span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 如果链表为空 返回null</span></span><br><span class="line">        <span class="keyword">if</span> (head.next == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 第一个遍历得到链表的长度(节点个数)</span></span><br><span class="line">        <span class="keyword">int</span> size = getLength(head);</span><br><span class="line">        <span class="comment">// 第二次遍历 size-index 位置 就是我们倒数的第K个节点</span></span><br><span class="line">        <span class="comment">// 先做一个index的校验</span></span><br><span class="line">        <span class="keyword">if</span> (index &lt;= <span class="number">0</span> || index &gt; size) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 定义辅助遍历 for循环定位到倒数的index</span></span><br><span class="line">        HeroNode cur = head.next;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size - index; i++) &#123;</span><br><span class="line">            cur = cur.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cur;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="单链表的反转"><a href="#单链表的反转" class="headerlink" title="单链表的反转"></a>单链表的反转</h3><p><img src="https://user-gold-cdn.xitu.io/2019/10/29/16e1529a9be2cd78?w=970&h=530&f=png&s=238434" alt="单链表的反转"></p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/10/29/16e152a41dcaaa57?w=1298&h=708&f=png&s=455599" alt></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//单链表的反转</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    1、 先定义一个节点 reverHead = new HeroNode()</span></span><br><span class="line"><span class="comment">    2、 从头到尾遍历原来的链表 每遍历一个节点 就将其取出 并放出在新的链表reverse的最前端</span></span><br><span class="line"><span class="comment">    3、 原来的链表的head.next = reversehead.next</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">reverseList</span><span class="params">(HeroNode head)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 如果当前链表为空 或者只有一个节点 无需反转 直接返回</span></span><br><span class="line">        <span class="keyword">if</span> (head.next == <span class="keyword">null</span> || head.next.next == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 定义一个辅助指针 帮助我们遍历原来的链表</span></span><br><span class="line">        HeroNode cur = head.next;</span><br><span class="line">        <span class="comment">// 指向当前节点[cur]的下一个节点</span></span><br><span class="line">        HeroNode next = <span class="keyword">null</span>;</span><br><span class="line">        HeroNode reverseHead = <span class="keyword">new</span> HeroNode(<span class="number">0</span>, <span class="string">""</span>, <span class="string">""</span>);</span><br><span class="line">        <span class="comment">// 遍历原来的链表 每遍历一个节点 就将其取出 并放在新的链表 reverseHead 的最前端</span></span><br><span class="line">        <span class="keyword">while</span> (cur != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="comment">// 先暂时保存当前节点的下一节点 因为后面需要</span></span><br><span class="line">            next = cur.next;</span><br><span class="line">            <span class="comment">// 将cur的下一个节点指向新的链表的最前端</span></span><br><span class="line">            cur.next = reverseHead.next;</span><br><span class="line">            <span class="comment">// 将 cur 连接到新的链表上</span></span><br><span class="line">            reverseHead.next = cur;</span><br><span class="line">            <span class="comment">// 让cur后移</span></span><br><span class="line">            cur = next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 将head.next 指向 reverseHead.next 实现单链表的反转</span></span><br><span class="line">        head.next = reverseHead.next;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="从尾到头打印链表"><a href="#从尾到头打印链表" class="headerlink" title="从尾到头打印链表"></a>从尾到头打印链表</h2><p>思路分析图解</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/10/29/16e152c2925ea660?w=1584&h=528&f=png&s=440239" alt="从尾到头打印"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.cxjd.LinkedList;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Stack;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 〈一句话功能简述〉&lt;br&gt;</span></span><br><span class="line"><span class="comment"> * 〈栈的模拟实现〉</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> yxm</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019-10-27</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> 1.0.0</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StackTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 利用栈这种数据结构 将各个节点压入到栈中 然后利用栈的先进后出的特点 实现了逆序打印的效果</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">reversePrint</span><span class="params">(HeroNode head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (head.next == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="comment">// 空链表 不能打印</span></span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 创建要给一个栈 将各个节点压入栈</span></span><br><span class="line">        Stack&lt;HeroNode&gt; stack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">        HeroNode cur = head.next;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 将链表的所有节点压入栈</span></span><br><span class="line">        <span class="keyword">while</span> (cur != <span class="keyword">null</span>) &#123;</span><br><span class="line">            stack.push(cur);</span><br><span class="line">            <span class="comment">// 后移 这样就可以压入下一个节点</span></span><br><span class="line">            cur = cur.next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 将栈中的节点打印 pop 出栈</span></span><br><span class="line">        <span class="keyword">while</span> (stack.size() &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="comment">// stack 的特点是先进后出</span></span><br><span class="line">            System.out.println(stack.pop());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="双向链表的操作分析和实现"><a href="#双向链表的操作分析和实现" class="headerlink" title="双向链表的操作分析和实现"></a>双向链表的操作分析和实现</h1><p>​    使用带head头的双向链表实现 -水浒英雄传</p>
+<p>管理单向链表的缺点分析:</p>
+<ol>
+<li>单向链表，查找打方向只能是一个方向，而双向链表可以向前或者向后查找</li>
+<li>单向链表不能自我删除，需要靠辅助节点，而双向链表，则可以自我删除，所以前面我们单链表删除时节点，宗师找到temp,temp是待删除节点的前一个节点</li>
+<li>分析了双向链表如何完成遍历，添加，修改和删除的思路</li>
+</ol>
+<p><img src="https://user-gold-cdn.xitu.io/2019/10/29/16e153208378a0c3?w=1914&h=470&f=png&s=402133" alt="双向链表"></p>
+<p>对上图的说明:</p>
+<ol>
+<li>遍历 和单链表一样，只是可以向前 也可以向后查找</li>
+<li>添加(默认添加到双向链表的最后)<ol>
+<li>先找到双向链表的最后这个节点(通过辅助指针循环遍历 此时temp 指向最后一个节点)</li>
+<li>temp.next = newHeroNode</li>
+<li>newHeroNode.pre = temp</li>
+</ol>
+</li>
+<li>修改 思路和原来的单向链表一样</li>
+<li>删除<ol>
+<li>因为是双向链表 因此我们可以实现自我删除某个节点</li>
+<li>直接从要删除的这个节点，比如 temp</li>
+<li>temp.pre.next = temp.next    (将temp的前一个节点的后指针指向temp的下一个)</li>
+<li>temp.next.pre = temp.pre （temp的下一个节点的前指针指向temp的前一个节点）</li>
+</ol>
+</li>
+</ol>
+<h3 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.cxjd.LinkedList;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 〈一句话功能简述〉&lt;br&gt;</span></span><br><span class="line"><span class="comment"> * 〈双向链表〉</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> yxm</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019-10-27</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> 1.0.0</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DoubleLinkList</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 先初始化一个头结点 头结点不要动 不存放具体数据</span></span><br><span class="line">    <span class="keyword">private</span> HeroNode2 head = <span class="keyword">new</span> HeroNode2(<span class="number">0</span>, <span class="string">""</span>, <span class="string">""</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 返回头结点</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> HeroNode2 <span class="title">getHead</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 遍历双向链表的方法</span></span><br><span class="line">    <span class="comment">// 显示链表</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">list</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 判断链表是否为空</span></span><br><span class="line">        <span class="keyword">if</span> (head.next == <span class="keyword">null</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">"链表为空"</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 因为头结点 不能动 因此需要一个辅助变量来遍历</span></span><br><span class="line">        HeroNode2 temp = head.next;</span><br><span class="line">        <span class="keyword">while</span> (temp != <span class="keyword">null</span>) &#123;</span><br><span class="line">            System.out.println(temp);</span><br><span class="line">            <span class="comment">// 将temp 后移</span></span><br><span class="line">            temp = temp.next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 添加一个节点到双向链表的最后</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(HeroNode2 heroNode)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 因为head节点不能动 因此我们需要一个辅助节点temp 遍历</span></span><br><span class="line">        HeroNode2 temp = head;</span><br><span class="line">        <span class="comment">// 遍历链表 找到最后</span></span><br><span class="line">        <span class="keyword">while</span> (temp.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">            temp = temp.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 当退出while循环时 temp就指向了链表的最后</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 形成一个双向链表</span></span><br><span class="line">        temp.next = heroNode;</span><br><span class="line">        heroNode.pre = temp;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 修改一个节点的内容 可以看大佬双向链表的节点内容修改和单向链表一样</span></span><br><span class="line">    <span class="comment">// 只是 节点类型换成 HeroNode2</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">update</span><span class="params">(HeroNode2 newHeroNode)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//判断是否为空</span></span><br><span class="line">        <span class="keyword">if</span> (head.next == <span class="keyword">null</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">"链表为空"</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 找到需要修改的节点 根据no编号</span></span><br><span class="line">        <span class="comment">// 定义一个辅助变量</span></span><br><span class="line">        HeroNode2 temp = head.next;</span><br><span class="line">        <span class="comment">// 判断是否找到该节点</span></span><br><span class="line">        <span class="keyword">boolean</span> flag = <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">while</span> (temp != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (temp.no == newHeroNode.no) &#123;</span><br><span class="line">                <span class="comment">// 找到该节点</span></span><br><span class="line">                flag = <span class="keyword">true</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            temp = temp.next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 根据 flag 判断是否找到要修改的节点</span></span><br><span class="line">        <span class="keyword">if</span> (flag) &#123;</span><br><span class="line">            temp.name = newHeroNode.name;</span><br><span class="line">            temp.nickname = newHeroNode.nickname;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">//没有找到</span></span><br><span class="line">            System.out.printf(<span class="string">"没有找到 编号 %d 的节点，不能修改\n"</span>, newHeroNode.no);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 从双向链表中删除一个节点</span></span><br><span class="line">    <span class="comment">// 说明</span></span><br><span class="line">    <span class="comment">// 1、 对于双向链表 我们可以直接找到要删除的这个节点</span></span><br><span class="line">    <span class="comment">// 2、 找到后 自我删除即可</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">del</span><span class="params">(<span class="keyword">int</span> no)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (head.next == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="comment">// 判断当前链表是否为空</span></span><br><span class="line">            System.out.println(<span class="string">"链表为空 无法删除"</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 辅助变量</span></span><br><span class="line">        HeroNode2 temp = head.next;</span><br><span class="line">        <span class="comment">// 标志是否找到待删除的节点</span></span><br><span class="line">        <span class="keyword">boolean</span> flag = <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">while</span> (temp != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (temp.no==no) &#123;</span><br><span class="line">                <span class="comment">// 找到的待删除节点的前一个节点temp</span></span><br><span class="line">                flag = <span class="keyword">true</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            temp = temp.next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 判断flag</span></span><br><span class="line">        <span class="keyword">if</span> (flag) &#123;</span><br><span class="line">            <span class="comment">// 找到 可以删除</span></span><br><span class="line">            <span class="comment">// 单向链表 temp.next = temp.next.next</span></span><br><span class="line">            <span class="comment">// 前一个节点后一个节点指向 当前节点的后一个节点</span></span><br><span class="line">            temp.pre.next = temp.next;</span><br><span class="line">            <span class="comment">// 如果是最后一个则不需要对后一个节点的前指针进行设置 否则会出现空指针异常</span></span><br><span class="line">            <span class="keyword">if</span> (temp.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">                temp.next.pre = temp.pre;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.printf(<span class="string">"要删除的%d 节点不存在\n"</span>, no);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.cxjd.LinkedList;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 〈一句话功能简述〉&lt;br&gt;</span></span><br><span class="line"><span class="comment"> * 〈双向链表的节点类〉</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> yxm</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019-10-27</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> 1.0.0</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HeroNode2</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> no;</span><br><span class="line">    <span class="keyword">public</span> String name;</span><br><span class="line">    <span class="keyword">public</span> String nickname;</span><br><span class="line">    <span class="comment">// 指向下一个节点 默认为null</span></span><br><span class="line">    <span class="keyword">public</span> HeroNode2 next;</span><br><span class="line">    <span class="comment">// 指向前一个节点 默认为null</span></span><br><span class="line">    <span class="keyword">public</span> HeroNode2 pre;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">HeroNode2</span><span class="params">(<span class="keyword">int</span> no, String name, String nickname)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.no = no;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.nickname = nickname;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"HeroNode2&#123;"</span> +</span><br><span class="line">                <span class="string">"no="</span> + no +</span><br><span class="line">                <span class="string">", name='"</span> + name + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", nickname='"</span> + nickname + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>测试双向链表:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.cxjd.LinkedList;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 〈一句话功能简述〉&lt;br&gt;</span></span><br><span class="line"><span class="comment"> * 〈双向链表测试〉</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> yxm</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019-10-28</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> 1.0.0</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DoubleLinkListTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"测试"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 添加节点</span></span><br><span class="line">        HeroNode2 hero1 = <span class="keyword">new</span> HeroNode2(<span class="number">1</span>, <span class="string">"宋江"</span>, <span class="string">"及时雨"</span>);</span><br><span class="line">        HeroNode2 hero2 = <span class="keyword">new</span> HeroNode2(<span class="number">2</span>, <span class="string">"卢俊义"</span>, <span class="string">"玉麒麟"</span>);</span><br><span class="line">        HeroNode2 hero3 = <span class="keyword">new</span> HeroNode2(<span class="number">3</span>, <span class="string">"吴用"</span>, <span class="string">"智多星"</span>);</span><br><span class="line">        HeroNode2 hero4 = <span class="keyword">new</span> HeroNode2(<span class="number">4</span>, <span class="string">"林冲"</span>, <span class="string">"豹子头"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 创建一个双向链表</span></span><br><span class="line">        DoubleLinkList doubleLinkList = <span class="keyword">new</span> DoubleLinkList();</span><br><span class="line">        doubleLinkList.add(hero1);</span><br><span class="line">        doubleLinkList.add(hero2);</span><br><span class="line">        doubleLinkList.add(hero3);</span><br><span class="line">        doubleLinkList.add(hero4);</span><br><span class="line"></span><br><span class="line">        doubleLinkList.list();</span><br><span class="line"></span><br><span class="line">        HeroNode2 newHeroNode = <span class="keyword">new</span> HeroNode2(<span class="number">4</span>, <span class="string">"公孙胜"</span>, <span class="string">"入云龙"</span>);</span><br><span class="line">        doubleLinkList.update(newHeroNode);</span><br><span class="line">        System.out.println(<span class="string">"修改后"</span>);</span><br><span class="line">        doubleLinkList.list();</span><br><span class="line"></span><br><span class="line">        doubleLinkList.del(<span class="number">4</span>);</span><br><span class="line">        System.out.println(<span class="string">"删除后"</span>);</span><br><span class="line">        doubleLinkList.list();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="单向环形链表-应用场景"><a href="#单向环形链表-应用场景" class="headerlink" title="单向环形链表 应用场景"></a>单向环形链表 应用场景</h1><h2 id="Josephu-约瑟夫、约瑟夫环-问题"><a href="#Josephu-约瑟夫、约瑟夫环-问题" class="headerlink" title="Josephu(约瑟夫、约瑟夫环)问题"></a>Josephu(约瑟夫、约瑟夫环)问题</h2><p>Josephu 问题为:设编号为 1，2，… n 的 n 个人围坐一圈，约定编号为 k(1&lt;=k&lt;=n)的人从 1 开始报数，数 到 m 的那个人出列，它的下一位又从 1 开始报数，数到 m 的那个人又出列，依次类推，直到所有人出列为止，由 此产生一个出队编号的序列。<br>提示:用一个不带头结点的循环链表来处理 Josephu 问题:先构成一个有 n 个结点的单循环链表，然后由 k 结 点起从 1 开始计数，计到 m 时，对应结点从链表中删除，然后再从被删除结点的下一个结点又从 1 开始计数，直 到最后一个结点从链表中删除算法结束。</p>
+<h2 id="单向环形链表介绍"><a href="#单向环形链表介绍" class="headerlink" title="单向环形链表介绍"></a>单向环形链表介绍</h2><p><img src="https://user-gold-cdn.xitu.io/2019/10/29/16e153f7e9698797?w=606&h=434&f=png&s=89486" alt="单向环形链表"></p>
+<h2 id="Josephu-问题"><a href="#Josephu-问题" class="headerlink" title="Josephu 问题"></a>Josephu 问题</h2><p>示意图:</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/10/29/16e15419d87eee57?w=1500&h=792&f=png&s=465655" alt></p>
+<p>Josephu 问题为:</p>
+<p>​    设编号为 1，2，… n 的 n 个人围坐一圈，约定编号为 k(1&lt;=k&lt;=n)的人从 1 开始报数，数到 m 的那个人出列，它的下一位又从 1 开始报数，数到 m 的那个人又出列，依次类推，直到所有人出列为止，由此 产生一个出队编号的序列。</p>
+<p>提示:</p>
+<p>用一个不带头结点的循环链表来处理 Josephu 问题:先构成一个有 n 个结点的单循环链表，然后由 k 结点起从 1 开 始计数，计到 m 时，对应结点从链表中删除，然后再从被删除结点的下一个结点又从 1 开始计数，直到最后一个结点从链表中删除算法结束。</p>
+<p>创建环形链表的思路图解</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/10/29/16e154570487fb0f?w=1408&h=654&f=png&s=390943" alt="UTOOLS1572314901527.png"></p>
+<p>约瑟夫问题-小孩出圈的思路分析图</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/10/29/16e154885984e02f?w=1620&h=718&f=png&s=525301" alt="小孩出圈"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.cxjd.LinkedList;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 〈一句话功能简述〉&lt;br&gt;</span></span><br><span class="line"><span class="comment"> * 〈约瑟夫问题 单向环形链表〉</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> yxm</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019-10-28</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> 1.0.0</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Josephu</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//  测试一把 看看构建环形链表 遍历是否Ok</span></span><br><span class="line">        Josephu josephu = <span class="keyword">new</span> Josephu();</span><br><span class="line">        josephu.addBoy(<span class="number">5</span>);</span><br><span class="line">        josephu.showBoy();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 创建first 节点 当前没有编号</span></span><br><span class="line">    <span class="keyword">private</span> Boy first = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addBoy</span><span class="params">(<span class="keyword">int</span> nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums &lt; <span class="number">1</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">"num的值不正确"</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 创建辅助指针 帮助构建环形链表</span></span><br><span class="line">        Boy curBoy = <span class="keyword">null</span>;</span><br><span class="line">        <span class="comment">// 使用for循环创建我们的链表</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums; i++) &#123;</span><br><span class="line">            <span class="comment">// 根据编号创建小孩节点</span></span><br><span class="line">            Boy boy = <span class="keyword">new</span> Boy(i);</span><br><span class="line">            <span class="comment">// 如果是第一个小孩</span></span><br><span class="line">            <span class="keyword">if</span> (i == <span class="number">0</span>) &#123;</span><br><span class="line">                first = boy;</span><br><span class="line">                <span class="comment">// 构成环</span></span><br><span class="line">                first.setNext(first);</span><br><span class="line">                <span class="comment">// 让curBoy指向第一个小孩</span></span><br><span class="line">                curBoy = first;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// 如果不是第一个小孩</span></span><br><span class="line">                <span class="comment">// 将新增的节点填入环形链表</span></span><br><span class="line">                curBoy.setNext(boy);</span><br><span class="line">                <span class="comment">// 将环重新连接起来</span></span><br><span class="line">                boy.setNext(first);</span><br><span class="line">                <span class="comment">// 辅助变量后移</span></span><br><span class="line">                curBoy = boy;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 遍历当前环形链表</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showBoy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 判断链表是否为空</span></span><br><span class="line">        <span class="keyword">if</span> (first == <span class="keyword">null</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">"链表为空"</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 因为first 不能动 因此我们仍然使用一个辅助指针完成遍历</span></span><br><span class="line">        Boy curBoy = first;</span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">            System.out.printf(<span class="string">"小孩的编号为%d\n"</span>, curBoy.getNo());</span><br><span class="line">            <span class="comment">// 说明已经遍历完毕</span></span><br><span class="line">            <span class="keyword">if</span> (curBoy.getNext() == first) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// curBoy 后移</span></span><br><span class="line">            curBoy = curBoy.getNext();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 根据用户的输入 计算出小孩出圈的顺序</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    @param : starNo 表示从第几个小孩开始数</span></span><br><span class="line"><span class="comment">    @ param : countNum 表示数几下</span></span><br><span class="line"><span class="comment">    @param: nims 表示最初由多少个小孩在圈中</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">countBoy</span><span class="params">(<span class="keyword">int</span> startNo, <span class="keyword">int</span> countNum, <span class="keyword">int</span> nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (first == <span class="keyword">null</span> || startNo &lt; <span class="number">1</span> || startNo &gt; nums) &#123;</span><br><span class="line">            System.out.println(<span class="string">"参数输入有误"</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 创建要给辅助指针，帮助小孩出圈</span></span><br><span class="line">        Boy helper = first;</span><br><span class="line">        <span class="comment">// 将helper 指向最后一个节点</span></span><br><span class="line">        <span class="keyword">while</span> (helper.getNext() != <span class="keyword">null</span>) &#123;</span><br><span class="line">            helper = helper.getNext();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 小孩报数前 先让first 和 helper 移动 k-1次</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; startNo - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            first = first.getNext();</span><br><span class="line">            helper = helper.getNext();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 当小孩报数时 让first 和 helper 指针同时的移动 m-1次 然后出圈</span></span><br><span class="line">        <span class="keyword">while</span> (helper != first) &#123;</span><br><span class="line">            <span class="comment">// 让 first 和 helper 指针同时移动 countNum-1</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; countNum - <span class="number">1</span>; i++) &#123;</span><br><span class="line">                <span class="comment">// 将 first 与 helper 后移 移动后的first节点即为要出圈的小孩</span></span><br><span class="line">                first = first.getNext();</span><br><span class="line">                helper = helper.getNext();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 这时 first 指向的节点 就是要出圈的小孩节点</span></span><br><span class="line">            System.out.printf(<span class="string">"小孩%d出圈\n"</span>, first.getNo());</span><br><span class="line">            <span class="comment">// 这时将first指向的小孩节点出圈</span></span><br><span class="line">            <span class="comment">// first后移 helper 在一定意义上是前一个 将他的后指针指向移动后的first</span></span><br><span class="line">            first = first.getNext();</span><br><span class="line">            helper.setNext(first);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        System.out.printf(<span class="string">"最后留在圈中的小孩编号为%d\n"</span>, first.getNo());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.cxjd.LinkedList;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 〈一句话功能简述〉&lt;br&gt;</span></span><br><span class="line"><span class="comment"> * 〈Boy类 作为单向环形链表的一个节点〉</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> yxm</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019-10-28</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> 1.0.0</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Boy</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 编号</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> no;</span><br><span class="line">    <span class="comment">// 指向下一个节点 默认为null</span></span><br><span class="line">    <span class="keyword">private</span> Boy next;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Boy</span><span class="params">(<span class="keyword">int</span> no)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.no = no;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Boy <span class="title">getNext</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> next;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setNext</span><span class="params">(Boy next)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.next = next;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getNo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> no;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setNo</span><span class="params">(<span class="keyword">int</span> no)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.no = no;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+
+    
+    
+    
+	
+	<div>
+	
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+	
+	</div>
+
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div id="reward-container">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="https://i.loli.net/2019/08/13/zHb7ptVQmv8a2A1.jpg" alt="遠見卓識 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="https://i.loli.net/2019/08/13/TYciu8ZdV7S1wxg.jpg" alt="遠見卓識 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>遠見卓識</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="http://yxm666.github.io/2019/10/28/链表/" title="链表">http://yxm666.github.io/2019/10/28/链表/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/数据结构与算法/" rel="tag"><i class="fa fa-tag"></i> 数据结构与算法</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/25/稀疏数组与队列/" rel="next" title="稀疏数组与队列">
+                <i class="fa fa-chevron-left"></i> 稀疏数组与队列
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NjAzMS8yMjU0Mg=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+			<a href="/">
+              <img class="site-author-image" itemprop="image" src="https://i.loli.net/2019/08/13/NbiJ5afDq8RA1m7.jpg" alt="遠見卓識">
+			</a>
+
+            
+              <p class="site-author-name" itemprop="name">遠見卓識</p>
+              <div class="site-description motion-element" itemprop="description">前路漫漫  當克己  當慎獨</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/yxm666" title="GitHub &rarr; https://github.com/yxm666" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="/877495283@qq.com" title="E-Mail &rarr; 877495283@qq.com"><i class="fa fa-fw fa-envelope"></i></a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#链表"><span class="nav-text">链表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#链表简介"><span class="nav-text">链表简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单链表的应用实例"><span class="nav-text">单链表的应用实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码实现"><span class="nav-text">代码实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单链表面试题"><span class="nav-text">单链表面试题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#去单链表中有效节点的个数"><span class="nav-text">去单链表中有效节点的个数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查找单链表中的倒数第K个结点"><span class="nav-text">查找单链表中的倒数第K个结点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单链表的反转"><span class="nav-text">单链表的反转</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从尾到头打印链表"><span class="nav-text">从尾到头打印链表</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#双向链表的操作分析和实现"><span class="nav-text">双向链表的操作分析和实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码实现-1"><span class="nav-text">代码实现</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#单向环形链表-应用场景"><span class="nav-text">单向环形链表 应用场景</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Josephu-约瑟夫、约瑟夫环-问题"><span class="nav-text">Josephu(约瑟夫、约瑟夫环)问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单向环形链表介绍"><span class="nav-text">单向环形链表介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Josephu-问题"><span class="nav-text">Josephu 问题</span></a></li></ol></li></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">遠見卓識</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+    <span title="站点总字数">65k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    
+    <span title="站点阅读时长">59 分钟</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+      <div>
+        
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "1",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      },
+      "slide": {
+        "bdImg": "5",
+        "bdPos": "left",
+        "bdTop": "100"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      </div>
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.2.0"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    
+
+
+<script>
+  window.livereOptions = {
+    refer: '2019/10/28/链表/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  $('.highlight').not('.gist .highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      const selection = document.getSelection();
+      const selected = selection.rangeCount > 0 ? selection.getRangeAt(0) : false;
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+        if (result) $(this).text('复制成功');
+        else $(this).text('复制失败');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+      if (selected) {
+        selection.removeAllRanges();
+        selection.addRange(selected);
+      }
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('复制');
+      }, 300);
+    }).append(e);
+  })
+</script>
+
+
+  
+
+  
+
+  
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+ 
+ 
+</body>
+<link rel="stylesheet" href="/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
+</html>

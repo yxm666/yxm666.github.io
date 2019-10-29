@@ -109,22 +109,22 @@
 
 
 
-  <meta name="description" content="前言1好了，好久没有更新博客了，现在跟着韩顺平的数据结构学习，主要也是实验室太忙了，自己也有一些事，以后周更要坚持住。这次记录的是稀疏数组与队列，队列又分有普通队列与环形队列。  稀疏数组 适用情况  在一些情况下，二维数组会有大部分的数据无用，比如没有意义的0，我们这时候可以使用稀疏数组进行存储该二维数组。 处理方法 记录数组一共有几行几列，有多少不同的值 把具有不同值得元素的行列及值记录在一个">
+  <meta name="description" content="前言​    好了，好久没有更新博客了，现在跟着韩顺平的数据结构学习，主要也是实验室太忙了，自己也有一些事，以后周更要坚持住。这次记录的是稀疏数组与队列，队列又分有普通队列与环形队列。 稀疏数组 适用情况  在一些情况下，二维数组会有大部分的数据无用，比如没有意义的0，我们这时候可以使用稀疏数组进行存储该二维数组。 处理方法 记录数组一共有几行几列，有多少不同的值 把具有不同值得元素的行列及值记录">
 <meta name="keywords" content="数据结构与算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="稀疏数组与队列">
 <meta property="og:url" content="http://yxm666.github.io/2019/10/25/稀疏数组与队列/index.html">
 <meta property="og:site_name" content="Silence">
-<meta property="og:description" content="前言1好了，好久没有更新博客了，现在跟着韩顺平的数据结构学习，主要也是实验室太忙了，自己也有一些事，以后周更要坚持住。这次记录的是稀疏数组与队列，队列又分有普通队列与环形队列。  稀疏数组 适用情况  在一些情况下，二维数组会有大部分的数据无用，比如没有意义的0，我们这时候可以使用稀疏数组进行存储该二维数组。 处理方法 记录数组一共有几行几列，有多少不同的值 把具有不同值得元素的行列及值记录在一个">
+<meta property="og:description" content="前言​    好了，好久没有更新博客了，现在跟着韩顺平的数据结构学习，主要也是实验室太忙了，自己也有一些事，以后周更要坚持住。这次记录的是稀疏数组与队列，队列又分有普通队列与环形队列。 稀疏数组 适用情况  在一些情况下，二维数组会有大部分的数据无用，比如没有意义的0，我们这时候可以使用稀疏数组进行存储该二维数组。 处理方法 记录数组一共有几行几列，有多少不同的值 把具有不同值得元素的行列及值记录">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://s2.ax1x.com/2019/10/25/KddlNj.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/10/25/KdIqsO.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/10/25/KdIqsO.png">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/10/25/16e021cfabedfc73?w=942&h=358&f=png&s=126501">
-<meta property="og:updated_time" content="2019-10-25T09:53:13.091Z">
+<meta property="og:updated_time" content="2019-10-28T14:59:55.718Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="稀疏数组与队列">
-<meta name="twitter:description" content="前言1好了，好久没有更新博客了，现在跟着韩顺平的数据结构学习，主要也是实验室太忙了，自己也有一些事，以后周更要坚持住。这次记录的是稀疏数组与队列，队列又分有普通队列与环形队列。  稀疏数组 适用情况  在一些情况下，二维数组会有大部分的数据无用，比如没有意义的0，我们这时候可以使用稀疏数组进行存储该二维数组。 处理方法 记录数组一共有几行几列，有多少不同的值 把具有不同值得元素的行列及值记录在一个">
+<meta name="twitter:description" content="前言​    好了，好久没有更新博客了，现在跟着韩顺平的数据结构学习，主要也是实验室太忙了，自己也有一些事，以后周更要坚持住。这次记录的是稀疏数组与队列，队列又分有普通队列与环形队列。 稀疏数组 适用情况  在一些情况下，二维数组会有大部分的数据无用，比如没有意义的0，我们这时候可以使用稀疏数组进行存储该二维数组。 处理方法 记录数组一共有几行几列，有多少不同的值 把具有不同值得元素的行列及值记录">
 <meta name="twitter:image" content="https://s2.ax1x.com/2019/10/25/KddlNj.png">
 
 
@@ -318,7 +318,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">7</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">8</span></a>
 
   </li>
 
@@ -442,13 +442,23 @@
                 
               
 
-              <time title="创建时间：2019-10-25 15:03:09 / 修改时间：17:53:13" itemprop="dateCreated datePublished" datetime="2019-10-25T15:03:09+08:00">2019-10-25</time>
+              <time title="创建时间：2019-10-25 15:03:09" itemprop="dateCreated datePublished" datetime="2019-10-25T15:03:09+08:00">2019-10-25</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-10-28 22:59:55" itemprop="dateModified" datetime="2019-10-28T22:59:55+08:00">2019-10-28</time>
+              </span>
             
           
 
@@ -519,8 +529,7 @@
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">好了，好久没有更新博客了，现在跟着韩顺平的数据结构学习，主要也是实验室太忙了，自己也有一些事，以后周更要坚持住。这次记录的是稀疏数组与队列，队列又分有普通队列与环形队列。</span><br></pre></td></tr></table></figure>
-
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h1><p>​    好了，好久没有更新博客了，现在跟着韩顺平的数据结构学习，主要也是实验室太忙了，自己也有一些事，以后周更要坚持住。这次记录的是稀疏数组与队列，队列又分有普通队列与环形队列。</p>
 <h1 id="稀疏数组"><a href="#稀疏数组" class="headerlink" title="稀疏数组"></a>稀疏数组</h1><hr>
 <h2 id="适用情况"><a href="#适用情况" class="headerlink" title="适用情况"></a><strong>适用情况</strong></h2><p>  <strong>在一些情况下，二维数组会有大部分的数据无用，比如没有意义的0，我们这时候可以使用稀疏数组进行存储该二维数组。</strong></p>
 <h2 id="处理方法"><a href="#处理方法" class="headerlink" title="处理方法"></a><strong>处理方法</strong></h2><ul>
@@ -706,6 +715,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/10/28/链表/" rel="prev" title="链表">
+                链表 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -783,7 +796,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -945,7 +958,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">46k</span>
+    <span title="站点总字数">65k</span>
   
 
   
@@ -956,7 +969,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">42 分钟</span>
+    <span title="站点阅读时长">59 分钟</span>
   
 </div>
 

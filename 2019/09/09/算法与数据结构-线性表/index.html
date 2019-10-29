@@ -146,7 +146,12 @@
 <meta property="og:image" content="http://yanxuan.nosdn.127.net/fcee62ee89cd0dac30639410af14e522.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/09/10/naKWod.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/09/10/naKLwQ.png">
-<meta property="og:updated_time" content="2019-09-11T10:49:46.679Z">
+<meta property="og:image" content="http://yanxuan.nosdn.127.net/59f621e1a2ec7dd947e42106510057b1.png">
+<meta property="og:image" content="http://yanxuan.nosdn.127.net/6a00f51770ea0b0715a7d01c00533496.png">
+<meta property="og:image" content="http://yanxuan.nosdn.127.net/91c91dfb0cd72c3d4999fadf91927bfe.png">
+<meta property="og:image" content="http://yanxuan.nosdn.127.net/cb528615b8d32d77f25e757fcbbb115f.png">
+<meta property="og:image" content="http://yanxuan.nosdn.127.net/2ca04c187595ee43df213e15d546ae4e.png">
+<meta property="og:updated_time" content="2019-10-28T14:54:20.256Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法与数据结构-线性表">
 <meta name="twitter:description" content="#　前言    线性表是零个或多个具有相同类型的数据元素的有限序列。主要分为：顺序存储结构、链式存储结构，在链式存储结构中又主要分为：单链表、静态链表、循环链表、双向链表   线性表 线性表(List):零个或多个数据元素的有限序列 序列：  元素之间是有顺序的，若元素存在多个，则第一个元素无前驱，最后一个元素无后继，其他每个元素都有切只有一个前驱和后继。   所以 线性表元素的个数n（n&amp;gt;">
@@ -343,7 +348,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">7</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">8</span></a>
 
   </li>
 
@@ -482,7 +487,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-09-11 18:49:46" itemprop="dateModified" datetime="2019-09-11T18:49:46+08:00">2019-09-11</time>
+                <time title="修改时间：2019-10-28 22:54:20" itemprop="dateModified" datetime="2019-10-28T22:54:20+08:00">2019-10-28</time>
               </span>
             
           
@@ -523,7 +528,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">13k</span>
+              <span title="本文字数">15k</span>
             </span>
           
 
@@ -535,7 +540,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">12 分钟</span>
+              <span title="阅读时长">13 分钟</span>
             </span>
           
 
@@ -789,14 +794,56 @@
 <p>​    当我们要将两个循环链表合并成一个表时，有了尾指针就非常简单了。下面两个循环链表，它们的尾指针分别是rearA和rearB。</p>
 <p><img src="https://s2.ax1x.com/2019/09/10/naKLwQ.png" alt></p>
 <p>​    要想将它们合并，只需要如下操作。</p>
-<p>![](/Users/yxm/Library/Application Support/typora-user-images/image-20190910230951228.png)</p>
+<p><img src="http://yanxuan.nosdn.127.net/59f621e1a2ec7dd947e42106510057b1.png" alt></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">p=rearA-&gt;next;  <span class="comment">// 保存A表的头结点 即1</span></span><br><span class="line">rearA-&gt;next=rearB-&gt;next-&gt;next; <span class="comment">// 将本指向B表的第一个结点(不是头结点) 赋值给rearA-&gt;next 即2(头结点)</span></span><br><span class="line">q=rearB-&gt;next;</span><br><span class="line">rearB-&gt;next=p; <span class="comment">//将原A表的头结点赋值给rearB-&gt;next 即3</span></span><br><span class="line"><span class="built_in">free</span>(q)  <span class="comment">// 释放q</span></span><br></pre></td></tr></table></figure>
 
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
 <h2 id="双向l建表"><a href="#双向l建表" class="headerlink" title="双向l建表"></a>双向l建表</h2><hr>
 <p>​    我们在单链表中，有了next指针，这就使得我们要查找下一结点的时间复杂度为O(1)。可是如果我们要查找的是上一结点的话，那最坏的时间复杂度就是O(n)了，因为我们每次都要从头开始遍历查找。</p>
 <p>​    双向链表是在单链表的每个结点中，再设置一个指向其他前驱结点的指针域。所以在双向链表中的结点都有两个指针域，一个指向直接后继，另一个指向直接前驱。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 线性表的双向链表存储结构</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">DulNode</span>&#123;</span></span><br><span class="line">  ElemType data;</span><br><span class="line">  <span class="comment">// 直接前驱指针</span></span><br><span class="line">  <span class="class"><span class="keyword">struct</span> <span class="title">DuLNode</span> *<span class="title">prior</span>;</span></span><br><span class="line">  <span class="comment">// 直接后继指针</span></span><br><span class="line">  <span class="class"><span class="keyword">struct</span> <span class="title">DuLNode</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125; DulNode, *DuLinkList;</span><br></pre></td></tr></table></figure>
 
+<p>=======</p>
+<h2 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h2><hr>
+<p>​    我们在单链表中，有了next指针，这就使得我们要查找下一结点的时间复杂度为O(1)。可是如果我们要查找的是上一结点的话，那最坏的时间复杂度就是O(n)了，因为我们每次都要从头开始遍历查找。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 线性表的双向链表存储结构</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">DulNode</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="comment">// 直接前驱指针</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">DulNode</span> *<span class="title">prior</span>;</span></span><br><span class="line">    <span class="comment">// 直接后继指针</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">DuLNode</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125; DulNode *DuLinkList;</span><br></pre></td></tr></table></figure>
+
+<p>​    既然单链表也可以有循环链表，那么双向链表当然也可以是循环表。双向链表的循环带头结点的空链表与非空链表如图所示。</p>
+<p><img src="http://yanxuan.nosdn.127.net/6a00f51770ea0b0715a7d01c00533496.png" alt></p>
+<p>​    由于这是双向链表，那么对于链表中的某一个结点P，它的后继的前驱结点，与前驱的后继都是自己。</p>
+<p><code>p-&gt;next-&gt;prior = p = p-&gt;prior-&gt;next</code></p>
+<p>​    双向链表是单链表中拓展出来的结构，它的很多操作是和单链表相同的，例如：求长度的ListLength，查找元素的GetElem等，这些操作都只要设计一个方向的指针，但在插入与删除需要涉及一个结点的两边结点操作时，情况就不相同了。</p>
+<p>​    插入操作不复杂，需要注意顺序。假设存储元素e的结点为s,要实现将结点s插入到结点p和p-&gt;next之间需要下面几步。</p>
+<p><img src="http://yanxuan.nosdn.127.net/91c91dfb0cd72c3d4999fadf91927bfe.png" alt="双向链表插入操作"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">s -&gt; prior = p;   <span class="comment">// 把p赋值给s的前驱，如图1</span></span><br><span class="line">s -&gt; next = p -&gt; next <span class="comment">//把p-&gt;next赋值给s的后端，如图2</span></span><br><span class="line">p -&gt; next -&gt; prior = s   <span class="comment">// 把s赋值给p-&gt;next的前驱，如图3</span></span><br><span class="line">p -&gt; next = s <span class="comment">// 把s赋值给p的后端，如图4</span></span><br></pre></td></tr></table></figure>
+
+<p>​    关键在于它们的顺序，由于第2步和第3步都用到了p-&gt;next。如果第4步先执行，则会使得p-&gt;next提前边变成了s，使得插入的工作完不成。 </p>
+<p>​    顺序:(我感觉的话最先弄得是插入的结点自身的东西然后因为你获取的是p结点 所以先该跟p有关的也就是p-&gt;next 有关的东西，然后最后再改p本身，因为如果你先动了p,那么p-&gt;next就搞不定了)</p>
+<pre><code>1. 先搞定s的前驱和后继
+  2. 搞定后结点的前驱
+  3. 解决前结点的后续</code></pre><p><img src="http://yanxuan.nosdn.127.net/cb528615b8d32d77f25e757fcbbb115f.png" alt="删除双向链表"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p-&gt;prior-&gt;next=p-&gt;next <span class="comment">//把p-&gt;next赋值给我p-&gt;prior的后继 如图1</span></span><br><span class="line">p-&gt;next-&gt;prior=p-&gt;prior <span class="comment">//把p-&gt;prior赋值给p-&gt;next的前驱 如图2</span></span><br><span class="line"><span class="built_in">free</span>(p)				  <span class="comment">//释放结点p</span></span><br></pre></td></tr></table></figure>
+
+<p>​    双向链表由于每个接待你都需要记录两份指针，所以再空间上要占用略多一些，但使得对某个结点的前后结点的操作，带来了方便，可以有效提高算法的时间性能。</p>
+<p>##　总结回顾</p>
+<hr>
+<p>​    <img src="http://yanxuan.nosdn.127.net/2ca04c187595ee43df213e15d546ae4e.png" alt></p>
+<p>​    线性表是零个或多个具有相同类型的数据元素的有限序列。链表比较快速的插入与删除。</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>b68ff727ae8177de918a107402988034fe81212e</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 
       
     </div>
@@ -996,7 +1043,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1123,7 +1170,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#线性表"><span class="nav-text">线性表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性表的抽象数据类型"><span class="nav-text">线性表的抽象数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性表的顺序存储结构"><span class="nav-text">线性表的顺序存储结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#顺序存储定义"><span class="nav-text">顺序存储定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#顺序存储方式"><span class="nav-text">顺序存储方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#顺序存储结构的插入与删除"><span class="nav-text">顺序存储结构的插入与删除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取元素操作"><span class="nav-text">获取元素操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除操作"><span class="nav-text">删除操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性表顺序存储结构的优缺点"><span class="nav-text">线性表顺序存储结构的优缺点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线性表的链式存储结构"><span class="nav-text">线性表的链式存储结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性表链式存储结构定义"><span class="nav-text">线性表链式存储结构定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#头指针与头结点的异同"><span class="nav-text">头指针与头结点的异同</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性表链式存储结构代码描述"><span class="nav-text">线性表链式存储结构代码描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单链表的读取"><span class="nav-text">单链表的读取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单链表的插入与删除"><span class="nav-text">单链表的插入与删除</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单链表的插入"><span class="nav-text">单链表的插入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单链表的删除"><span class="nav-text">单链表的删除</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单链表的整表创建"><span class="nav-text">单链表的整表创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单链表的整表删除"><span class="nav-text">单链表的整表删除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单链表结构与顺序存储结构优缺点"><span class="nav-text">单链表结构与顺序存储结构优缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双向l建表"><span class="nav-text">双向l建表</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#线性表"><span class="nav-text">线性表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性表的抽象数据类型"><span class="nav-text">线性表的抽象数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性表的顺序存储结构"><span class="nav-text">线性表的顺序存储结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#顺序存储定义"><span class="nav-text">顺序存储定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#顺序存储方式"><span class="nav-text">顺序存储方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#顺序存储结构的插入与删除"><span class="nav-text">顺序存储结构的插入与删除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取元素操作"><span class="nav-text">获取元素操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除操作"><span class="nav-text">删除操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性表顺序存储结构的优缺点"><span class="nav-text">线性表顺序存储结构的优缺点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线性表的链式存储结构"><span class="nav-text">线性表的链式存储结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性表链式存储结构定义"><span class="nav-text">线性表链式存储结构定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#头指针与头结点的异同"><span class="nav-text">头指针与头结点的异同</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性表链式存储结构代码描述"><span class="nav-text">线性表链式存储结构代码描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单链表的读取"><span class="nav-text">单链表的读取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单链表的插入与删除"><span class="nav-text">单链表的插入与删除</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单链表的插入"><span class="nav-text">单链表的插入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单链表的删除"><span class="nav-text">单链表的删除</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单链表的整表创建"><span class="nav-text">单链表的整表创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单链表的整表删除"><span class="nav-text">单链表的整表删除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单链表结构与顺序存储结构优缺点"><span class="nav-text">单链表结构与顺序存储结构优缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双向l建表"><span class="nav-text">双向l建表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双向链表"><span class="nav-text">双向链表</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1158,7 +1205,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">46k</span>
+    <span title="站点总字数">65k</span>
   
 
   
@@ -1169,7 +1216,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">42 分钟</span>
+    <span title="站点阅读时长">59 分钟</span>
   
 </div>
 
