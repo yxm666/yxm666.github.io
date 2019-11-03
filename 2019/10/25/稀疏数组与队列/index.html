@@ -120,8 +120,9 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/10/25/KddlNj.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/10/25/KdIqsO.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/10/25/KdIqsO.png">
+<meta property="og:image" content="https://img03.sogoucdn.com/app/a/100520146/5ee6717cf7bf5573402330bd2561d906">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/10/25/16e021cfabedfc73?w=942&h=358&f=png&s=126501">
-<meta property="og:updated_time" content="2019-10-28T14:59:55.718Z">
+<meta property="og:updated_time" content="2019-10-29T03:21:53.165Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="稀疏数组与队列">
 <meta name="twitter:description" content="前言​    好了，好久没有更新博客了，现在跟着韩顺平的数据结构学习，主要也是实验室太忙了，自己也有一些事，以后周更要坚持住。这次记录的是稀疏数组与队列，队列又分有普通队列与环形队列。 稀疏数组 适用情况  在一些情况下，二维数组会有大部分的数据无用，比如没有意义的0，我们这时候可以使用稀疏数组进行存储该二维数组。 处理方法 记录数组一共有几行几列，有多少不同的值 把具有不同值得元素的行列及值记录">
@@ -318,7 +319,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">8</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">9</span></a>
 
   </li>
 
@@ -457,7 +458,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-10-28 22:59:55" itemprop="dateModified" datetime="2019-10-28T22:59:55+08:00">2019-10-28</time>
+                <time title="修改时间：2019-10-29 11:21:53" itemprop="dateModified" datetime="2019-10-29T11:21:53+08:00">2019-10-29</time>
               </span>
             
           
@@ -585,7 +586,7 @@
 <h2 id="分析说明"><a href="#分析说明" class="headerlink" title="分析说明"></a>分析说明</h2><ol>
 <li>尾索引的下一个为头索引时表示队列满，即将队列容量空出一个作为约定，这个在做判断队列满的时候需要注意(rear + 1)% maxSize == front (满)</li>
 <li>rear == font (空)</li>
-<li>示意图:<img src="https://user-gold-cdn.xitu.io/2019/10/25/16e021cfabedfc73?w=942&h=358&f=png&s=126501" alt="环形队列示意图"></li>
+<li>示意图<img src="https://img03.sogoucdn.com/app/a/100520146/5ee6717cf7bf5573402330bd2561d906" alt="UTOOLS1572319307171.png">:<img src="https://user-gold-cdn.xitu.io/2019/10/25/16e021cfabedfc73?w=942&h=358&f=png&s=126501" alt="环形队列示意图"></li>
 </ol>
 <h2 id="思路如下"><a href="#思路如下" class="headerlink" title="思路如下"></a>思路如下</h2><ol>
 <li>front变量的含义进行调整:front就指向队列的第一个元素，也就是一说arr[front] 就是队列的第一个元素 front 的初始值为0</li>
@@ -796,7 +797,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -958,7 +959,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">65k</span>
+    <span title="站点总字数">79k</span>
   
 
   
@@ -969,7 +970,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">59 分钟</span>
+    <span title="站点阅读时长">1:12</span>
   
 </div>
 
