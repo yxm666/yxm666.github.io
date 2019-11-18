@@ -109,30 +109,25 @@
 
 
 
-  <meta name="description" content="前言 ​    啊，除了写数据结构与算法，也写点开发的东西吧，没事看看微信的文章，总结下大概的用法，要不以后学完数据结构(我咋觉得学不完)以后不会开发了可怎么办呢？  没有Maven的生活 ​    记得刚开始学Java的时候，对于引用Jar包，那简直就是噩梦。首先这个IDEA它虽然牛B，确实也复杂(当然会玩以后也很有成就感)，捣鼓那个jar包的导入就捣鼓了好多天。 ​    最关键的是，不知道去">
-<meta name="keywords" content="Maven,工具">
+  <meta name="description" content="前言 之前一直知道有Nginx的这个东西，也知道它性能很好，可以跟TomCat一起使用，做反向代理、负载均衡什么的，但是对于这些也都是了解个概念，并不是清楚它们的技术原理等，今天就来揭示一下。  Nginx的产生 ​    Nginx 同 Apache 一样都是一种 Web 服务器。基于 REST 架构风格，以统一资源描述符（Uniform Resources Identifier）URI 或者统">
+<meta name="keywords" content="中间件">
 <meta property="og:type" content="article">
-<meta property="og:title" content="maven">
-<meta property="og:url" content="http://yxm666.github.io/2019/11/17/maven/index.html">
+<meta property="og:title" content="Nginx">
+<meta property="og:url" content="http://yxm666.github.io/2019/11/18/Nginx/index.html">
 <meta property="og:site_name" content="Silence">
-<meta property="og:description" content="前言 ​    啊，除了写数据结构与算法，也写点开发的东西吧，没事看看微信的文章，总结下大概的用法，要不以后学完数据结构(我咋觉得学不完)以后不会开发了可怎么办呢？  没有Maven的生活 ​    记得刚开始学Java的时候，对于引用Jar包，那简直就是噩梦。首先这个IDEA它虽然牛B，确实也复杂(当然会玩以后也很有成就感)，捣鼓那个jar包的导入就捣鼓了好多天。 ​    最关键的是，不知道去">
+<meta property="og:description" content="前言 之前一直知道有Nginx的这个东西，也知道它性能很好，可以跟TomCat一起使用，做反向代理、负载均衡什么的，但是对于这些也都是了解个概念，并不是清楚它们的技术原理等，今天就来揭示一下。  Nginx的产生 ​    Nginx 同 Apache 一样都是一种 Web 服务器。基于 REST 架构风格，以统一资源描述符（Uniform Resources Identifier）URI 或者统">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g90vett1bgj30dc0fxgp8.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g90vklzn94j30d10fp75v.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g90w0y4xdpj30ty0frwk4.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g90w2vih8nj30u50av0xo.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g90w4gu3flj30dy09amyj.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g90w5ilneyj30f20dcjtk.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g90w6cn3m3j30e80ckdi2.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g917n046mij30iq0aqdhf.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g917o1fob2j30ip0b5wgb.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g917sbs5tnj30ir0aawfm.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g917wr7g50j30iq0gwjvu.jpg">
-<meta property="og:updated_time" content="2019-11-17T10:40:50.859Z">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g92f5zb1mdj313q0ia7bh.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g92i9z738uj31020gin8f.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g92ie7ylcoj31020i249c.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g92ifwraayj30u00vrjym.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g92ihfy5ldj30yg0gs13p.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g92ijpt8x2j30v40l8n4f.jpg">
+<meta property="og:updated_time" content="2019-11-18T13:28:36.354Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="maven">
-<meta name="twitter:description" content="前言 ​    啊，除了写数据结构与算法，也写点开发的东西吧，没事看看微信的文章，总结下大概的用法，要不以后学完数据结构(我咋觉得学不完)以后不会开发了可怎么办呢？  没有Maven的生活 ​    记得刚开始学Java的时候，对于引用Jar包，那简直就是噩梦。首先这个IDEA它虽然牛B，确实也复杂(当然会玩以后也很有成就感)，捣鼓那个jar包的导入就捣鼓了好多天。 ​    最关键的是，不知道去">
-<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g90vett1bgj30dc0fxgp8.jpg">
+<meta name="twitter:title" content="Nginx">
+<meta name="twitter:description" content="前言 之前一直知道有Nginx的这个东西，也知道它性能很好，可以跟TomCat一起使用，做反向代理、负载均衡什么的，但是对于这些也都是了解个概念，并不是清楚它们的技术原理等，今天就来揭示一下。  Nginx的产生 ​    Nginx 同 Apache 一样都是一种 Web 服务器。基于 REST 架构风格，以统一资源描述符（Uniform Resources Identifier）URI 或者统">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g92f5zb1mdj313q0ia7bh.jpg">
 
 
 
@@ -142,7 +137,7 @@
 
   
   
-  <link rel="canonical" href="http://yxm666.github.io/2019/11/17/maven/">
+  <link rel="canonical" href="http://yxm666.github.io/2019/11/18/Nginx/">
 
 
 
@@ -152,7 +147,7 @@
   };
 </script>
 
-  <title>maven | Silence</title>
+  <title>Nginx | Silence</title>
   
 
 
@@ -406,7 +401,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yxm666.github.io/2019/11/17/maven/">
+    <link itemprop="mainEntityOfPage" href="http://yxm666.github.io/2019/11/18/Nginx/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="遠見卓識">
@@ -423,7 +418,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">maven
+          <h1 class="post-title" itemprop="name headline">Nginx
 
               
             
@@ -449,7 +444,7 @@
                 
               
 
-              <time title="创建时间：2019-11-17 11:01:52 / 修改时间：18:40:50" itemprop="dateCreated datePublished" datetime="2019-11-17T11:01:52+08:00">2019-11-17</time>
+              <time title="创建时间：2019-11-18 19:00:48 / 修改时间：21:28:36" itemprop="dateCreated datePublished" datetime="2019-11-18T19:00:48+08:00">2019-11-18</time>
             </span>
           
 
@@ -480,7 +475,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">5.8k</span>
+              <span title="本文字数">3.7k</span>
             </span>
           
 
@@ -492,7 +487,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">5 分钟</span>
+              <span title="阅读时长">3 分钟</span>
             </span>
           
 
@@ -511,133 +506,82 @@
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h1><blockquote>
-<p>​    <strong>啊，除了写数据结构与算法，也写点开发的东西吧，没事看看微信的文章，总结下大概的用法，要不以后学完数据结构(我咋觉得学不完)以后不会开发了可怎么办呢？</strong></p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
+<p>之前一直知道有Nginx的这个东西，也知道它性能很好，可以跟TomCat一起使用，做反向代理、负载均衡什么的，但是对于这些也都是了解个概念，并不是清楚它们的技术原理等，今天就来揭示一下。</p>
 </blockquote>
-<h1 id="没有Maven的生活"><a href="#没有Maven的生活" class="headerlink" title="没有Maven的生活"></a><strong>没有Maven的生活</strong></h1><hr>
-<p>​    <strong>记得刚开始学Java的时候，对于引用Jar包，那简直就是噩梦。首先这个IDEA它虽然牛B，确实也复杂(当然会玩以后也很有成就感)，捣鼓那个jar包的导入就捣鼓了好多天。</strong></p>
-<p>​    <strong>最关键的是，不知道去哪找Jar，那真的是噩梦，幸好，后来莫名其妙学习了Maven~</strong></p>
-<p><strong>没有Maven的生活的日子:</strong></p>
-<ol>
-<li><p><strong>开发一个项目，需要用别人写好的jar包，我们先把开源的jar包下载下来放到项目的lib目录下，并把这个目录添加到CLASSPATH（告诉Java执行环境，在哪些目录下可以找到你要执行的Java程序需要的类或者包）</strong></p>
-</li>
-<li><p><strong>我们下载了a.jar发现a.jar还需要依赖b.jar，结果又去把b.jar包下载下来开始运行</strong></p>
-</li>
-<li><p><strong>如果运气够好，我们的项目在添加完所有的依赖后，能正产运行了。如果运气差点，还会遇到版本的问题，例如a.jar在调用b.jar的时候发现b.jar根本没有这个方法，在别的版本中才有，现在好了，光找依赖和适配版本就能花上不少时间</strong></p>
-</li>
-<li><p><strong>而且我们往git上上传代码的时候，还必须把这些lib都上传上去。别人下载我们的代码时也必须把lib下载下来，这个真心耗费时间</strong></p>
-<p><strong>为了解决这种局面，我们今天的主角，Maven正式登场！！！！</strong></p>
-<h1 id="有了Maven"><a href="#有了Maven" class="headerlink" title="有了Maven"></a><strong>有了Maven</strong></h1><hr>
-<p><strong>随着科技的发展，改革开放的浪潮席卷了大地，也席卷了IT界，一大堆生产力工具被创造出来了，俗话说的好，工欲善其事必先利其器。有了好的生产力工具，要做的事必定是事半功倍！而 Maven 就是一种为了解放我们程序猿的生产力工具。</strong></p>
-<p><strong>程序猿在日常工作中需要用到大量的jar包，有的是框架包如：netty，sentinel等，有的是工具包如：hutool，有的是公司内部的私有包如：xx-framework等等。</strong></p>
-<p><strong>一个项目中可能充斥着各种各样的jar包，如果我们用手工的方式去一个一个的管理的话，那样就会迷失在jar包的海洋里，这时我们通过 Maven 这种管理jar包的工具来帮助我们解决这个繁琐又棘手的问题，可以让我们专心于自己的功能与业务。</strong></p>
-<p><strong>其实 Maven 是一套软件工程管理和整合工具。他有很多的功能包括但不限于以下几点：</strong></p>
-<ul>
-<li><strong>工程的创建、构建、测试</strong></li>
-<li><strong>依赖的管理</strong></li>
-<li><strong>仓库的管理</strong></li>
-<li><strong>自动化部署</strong></li>
-<li><strong>。。。</strong></li>
+<h1 id="Nginx的产生"><a href="#Nginx的产生" class="headerlink" title="Nginx的产生"></a>Nginx的产生</h1><hr>
+<p>​    Nginx 同 Apache 一样都是一种 Web 服务器。基于 REST 架构风格，以统一资源描述符（Uniform Resources Identifier）URI 或者统一资源定位符（Uniform Resources Locator）URL 作为沟通依据，通过 HTTP 协议提供各种网络服务。</p>
+<p>​    然而，这些服务器在设计之初受到当时环境的局限，例如当时的用户规模，网络带宽，产品特点等局限并且各自的定位和发展都不尽相同。这也使得各个 Web 服务器有着各自鲜明的特点。</p>
+<p>​    Apache 的发展时期很长，而且是毫无争议的世界第一大服务器。它有着很多优点：稳定、开源、跨平台等等。它出现的时间太长了，它兴起的年代，互联网产业远远比不上现在。所以它被设计为一个重量级的。</p>
+<p>​    它不支持高并发的服务器。在 Apache 上运行数以万计的并发访问，会导致服务器消耗大量内存。操作系统对其进行进程或线程间的切换也消耗了大量的 CPU 资源，导致 HTTP 请求的平均响应速度降低。</p>
+<p>​    这些都决定了 Apache 不可能成为高性能 Web 服务器，轻量级高并发服务器 Nginx 就应运而生了。俄罗斯的工程师 Igor Sysoev，他在为 Rambler Media 工作期间，使用 C 语言开发了 Nginx。</p>
+<p>​    Nginx 作为 Web 服务器一直为 Rambler Media 提供出色而又稳定的服务。然后呢，Igor Sysoev 将 Nginx 代码开源，并且赋予自由软件许可证。</p>
+<h2 id="由于一下这几点，所以，Nginx火了"><a href="#由于一下这几点，所以，Nginx火了" class="headerlink" title="由于一下这几点，所以，Nginx火了:"></a>由于一下这几点，所以，Nginx火了:</h2><ul>
+<li>Nginx使用基于事件驱动架构，使得其可以支持数以百万级别的TCP连接。</li>
+<li>高度的模块化和自由软件许可证使得第三方模块层出不穷(开源性)。</li>
+<li>跨平台性，Nginx是一个跨平台服务器，可以运行在Linux、Windows、MacOS等操作系统上。</li>
+<li>这些优秀的设计代带来的极大的稳定性。</li>
 </ul>
-<p><strong>我们日常中用的最多的可能就是工程与依赖的管理了，其他的用到的频率不多。</strong></p>
-<p><strong>有了 Maven 之后，我们：</strong></p>
-<ul>
-<li><strong>不需要为每个项目都创建一个 /lib 目录用来存放各种jar包了</strong></li>
-<li><strong>不需要为到哪去寻找我需要的jar包而发愁了</strong></li>
-<li><strong>不需要为引用的jar包去寻找他所依赖的jar包了</strong></li>
-<li><strong>。。。</strong></li>
+<h1 id="Nginx的用武之地"><a href="#Nginx的用武之地" class="headerlink" title="Nginx的用武之地"></a>Nginx的用武之地</h1><hr>
+<p>​    Nginx是一款自由的、开源的、高性能的HTTP服务器和反向代理服务器；同时也是一个IMAP、POP3、SMTP代理服务器。</p>
+<p>​    Nginx可以作为一个<strong>HTTP服务器</strong>进行<strong>网站的发布</strong>处理，另外Nginx可以作为<strong>反向代理</strong>进行<strong>负载均衡</strong>的实现。</p>
+<h1 id="关于代理"><a href="#关于代理" class="headerlink" title="关于代理"></a>关于代理</h1><p>​    说道代理，首先我们要明确一个概念，所谓代理就是一个代表、一个渠道；此时就涉及到两个角色，一个是被代理角色，一个是目标角色。</p>
+<p>​    <strong>被代理角色通过这个代理访问目标角色完成的一些任务的过程称为代理操作过程</strong>；如同生活中的专卖店，客人到adidas专卖店买了一双鞋，这个专卖店就是代理，被代理角色就是adidas厂家，目标角色就是用户。</p>
+<h2 id="正向代理"><a href="#正向代理" class="headerlink" title="正向代理"></a>正向代理</h2><hr>
+<p>说反向代理之前，我们先看看正向代理，正向代理也是大家最常接触到的代理模式，我们会从两个方面来说关于正向代理的处理模式，分别从软件方面和生活方面来解释一下什么叫正向代理。</p>
+<p>在如今的网络环境下，我们如果由于技术需要要去访问国外的某些网站，此时你会发现位于国外的某网站我们通过浏览器是没有办法访问的。</p>
+<p>此时大家可能都会用一个操作 FQ 进行访问，FQ 的方式主要是找到一个可以访问国外网站的代理服务器，我们将请求发送给代理服务器，代理服务器去访问国外的网站，然后将访问到的数据传递给我们！</p>
+<p>上述这样的代理模式称为正向代理，正向代理最大的特点是客户端非常明确要访问的服务器地址；服务器只清楚请求来自哪个代理服务器，而不清楚来自哪个具体的客户端；正向代理模式屏蔽或者隐藏了真实客户端信息。</p>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g92f5zb1mdj313q0ia7bh.jpg" alt="正向代理示意图"></p>
+<p>客户端必须设置正向代理服务器，当然前提是要知道正向代理服务器的IP地址，还有代理程序的端口。</p>
+<p>总结来说: 正向代理，”它代理的是客户端”，是一个位于客户端和原始服务器（Origin Server）之间的服务器，为了从原始服务器取得内容，客户端向代理发送一个请求并指定目标（原始服务器)。</p>
+<h3 id="正向代理的用途"><a href="#正向代理的用途" class="headerlink" title="正向代理的用途:"></a>正向代理的用途:</h3><ul>
+<li>访问原来无法访问的资源，如Google。</li>
+<li>可以做缓存，加速访问资源。</li>
+<li>对客户端访问授权，上网进行验证。</li>
+<li>代理可以记录用户访问记录(上网行为管理)，对外隐藏用户信息，</li>
 </ul>
-</li>
-</ol>
-<h1 id="Maven的结构"><a href="#Maven的结构" class="headerlink" title="Maven的结构"></a>Maven的结构</h1><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g90vett1bgj30dc0fxgp8.jpg" alt="Maven的结构"></p>
-<h2 id="仓库"><a href="#仓库" class="headerlink" title="仓库"></a>仓库</h2><hr>
-<p>在 Maven 的术语中，仓库是一个位置(place)，例如目录，可以存储所有的工程 jar 文件、library jar 文 件、插件或任何其他的工程指定的文件。</p>
-<p>严格意义上说，Maven 只有两种类型的仓库:</p>
-<ul>
-<li>本地(local)</li>
-<li>远程(remote)</li>
+<h2 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h2><hr>
+<p>明白了什么是正向代理，我们继续看关于反向代理的处理方式，举例如我国的某宝网站，每天同时连接到网站的访问人数已经爆表，单个服务器远远不能满足人民日益增长的购买欲望了。</p>
+<p>此时就出现了一个大家耳熟能详的名词：分布式部署；也就是通过部署多台服务器来解决访问人数限制的问题。</p>
+<p>那么反向代理具体是通过什么样的方式实现的分布式的集群操作呢，我们先看一个示意图（我把服务器和反向代理框在一块，同属于一个环境，后面我有介绍）：</p>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g92i9z738uj31020gin8f.jpg" alt="反向代理"></p>
+<p>通过上述的图解大家就可以看清楚了，多个客户端给服务器发送的请求，Nginx 服务器接收到之后，按照一定的规则分发给了后端的业务处理服务器进行处理了。</p>
+<p>此时请求的来源也就是客户端是明确的，但是请求具体由哪台服务器处理的并不明确了，Nginx 扮演的就是一个反向代理角色。</p>
+<p>客户端是无感知代理的存在的，反向代理对外都是透明的，访问者并不知道自己访问的是一个代理。因为客户端不需要任何配置就可以访问。</p>
+<p><strong>反向代理，”它代理的是服务端”，主要用于服务器集群分布式部署的情况下，反向代理隐藏了服务器的信息。</strong></p>
+<h3 id="反向代理的作用"><a href="#反向代理的作用" class="headerlink" title="反向代理的作用:"></a>反向代理的作用:</h3><ul>
+<li>保证内网的安全，通常将反向代理作为公网访问的地址，web服务器是内网。</li>
+<li>负载均衡，通过反向代理服务器来优化网站的负载。</li>
 </ul>
-<h3 id="本地仓库"><a href="#本地仓库" class="headerlink" title="本地仓库"></a>本地仓库</h3><p>Maven 的本地仓库是机器上的一个文件夹。它在你第一次运行任何 maven 命令的时候创建。</p>
-<p>Maven 的本地仓库保存你的工程的所有依赖(library jar、plugin jar 等)。当你运行一次 Maven 构建时，Maven 会自动下载所有依赖的 jar 文件到本地仓库中。它避免了每次构建时都引用存放在远程仓库上的依赖文件。</p>
-<p>Maven 的本地仓库默认被创建在 <strong>${user.home}/.m2/repository</strong> 目录下。要修改默认位置，只要在 settings.xml 文件中定义另一个路径即可，例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;localRepository&gt;/anotherDirectory/.m2/respository&lt;/localRepository&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h3><p>Maven 的远程仓库可以是任何其他类型的存储库，可通过各种协议，例如 <code>file：//</code>和 <code>http：//</code> 来访问。</p>
-<p>这些存储库可以是由第三方提供的可供下载的远程仓库，例如Maven 的中央仓库(central repository)：</p>
-<p>repo.maven.apache.org/maven2</p>
-<p>uk.maven.org/maven2</p>
-<p>也可以是在公司内的FTP服务器或HTTP服务器上设置的内部存储库，用于在开发团队和发布之间共享私有的 artifacts。</p>
-<h3 id="中央仓库"><a href="#中央仓库" class="headerlink" title="中央仓库"></a>中央仓库</h3><p>Maven 的中央仓库是 Maven 社区维护的，里面包含了大量常用的库，我们可以直接引用，但是前提是我们的项目能够访问外网。</p>
-<h3 id="私有仓库"><a href="#私有仓库" class="headerlink" title="私有仓库"></a>私有仓库</h3><p>除了 Maven 的中央仓库外，还有一种就是私有仓库，这种仓库通常都是企业内部创建的一个私有库，用于一些内部jar包的维护与共享。由于网络原因和鉴于安全性的考虑，很多公司的内外网是隔离的，要想直接访问中央仓库是不可能的，并且直接把内部资源暴露在互联网上也是非常危险的，所以这时就需要创建一个私有库。</p>
-<p>那这些仓库之间的关系是怎样的呢？或者说一个 Maven 项目想要获取一个jar包的话，他该从哪个仓库中去获取呢？下图就是一个简单的描述：</p>
-<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g90vklzn94j30d10fp75v.jpg" alt></p>
-<p>首先 Maven 会到本地仓库中去寻找所需要的jar吧，如果找不到就会到配置的私有仓库中去找，如果私有仓库中也找不到的话，就会到配置的中央仓库中去找，如果还是找不到就会报错。但是这中间只要在某一个仓库中找到了就会返回了，除非仓库中有更新的版本，或者是snapshot版本。</p>
-<h2 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h2><p><code>Mirror</code> 则相当于一个代理，它会拦截去指定的远程 <code>Repository</code> 下载构件的请求，然后从自己这里找出构件回送给客户端。配置 <code>Mirror</code> 的目的一般是出于网速考虑。</p>
-<p><code>Repository</code> 和 <code>Mirror</code> 是两个不同的概念：前者本身是一个仓库，可以堆外提供服务，而后者本身并不是一个仓库，它只是远程仓库的网络加速器。</p>
-<p>需要注意的是很多本地仓库搭建工具往往也提供 <code>Mirror</code> 服务，比如Nexus就可以让同一个URL,既用作 <code>internalrepository</code>，又使它成为所有 <code>repository</code> 的 <code>Mirror</code>。</p>
-<p>如果 <strong>仓库X</strong> 可以提供 <strong>仓库Y</strong> 存储的所有内容，那么就可以认为 <strong>X是Y的一个镜像</strong>。这也意味着，任何一个可以从某个仓库中获得的构件，都可以从它的镜像中获取。</p>
-<p>举个例子：<a href="http://maven.net.cn/content/groups/public/" target="_blank" rel="noopener">http://maven.net.cn/content/groups/public/</a> 是中央仓库 <a href="http://repo1.maven.org/maven2/" target="_blank" rel="noopener">http://repo1.maven.org/maven2/</a> 在中国的镜像，由于地理位置的因素，该镜像往往能够提供比中央仓库更快的服务。</p>
-<p>因此，可以在Maven中配置该镜像来替代中央仓库。在settings.xml中配置如下代码：</p>
-<p>举例 阿里云的Maven镜像</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mirrors</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">id</span>&gt;</span>alimaven<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">name</span>&gt;</span>aliyun maven<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://maven.aliyun.com/nexus/content/repositories/central/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>central<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mirrors</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><hr>
-<p>生命周期是由 <strong>一组</strong> 有 <strong>顺序</strong> 的 <strong>阶段</strong> 构成的一个整体，这么说可能有点绕，那让我们来关注他里面的几个重要的点：</p>
+<h3 id="项目场景"><a href="#项目场景" class="headerlink" title="项目场景"></a>项目场景</h3><p>通常情况下，我们在实际项目操作时，正向代理和反向代理很有可能会存在同一个应用场景中，正向代理代理客户端的请求去访问目标服务器，目标服务器是一个反向单利服务器，反向代理了多台真实的业务处理服务器。(Tomcat 与 Nginx一起使用)</p>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g92ie7ylcoj31020i249c.jpg" alt="拓扑图"></p>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g92ifwraayj30u00vrjym.jpg" alt></p>
+<p>图解:</p>
 <ul>
-<li>一组：指的是可能有多个</li>
-<li>顺序：指的是按照顺序执行，执行某一个阶段的指令时会依次先执行该阶段之前的指令</li>
-<li>阶段：指的是具体要执行的内容</li>
+<li><strong>在正向代理中，Proxy 和 Client 同属于一个 LAN（图中方框内），隐藏了客户端信息。</strong></li>
+<li><strong>在反向代理中，Proxy 和 Server 同属于一个 LAN（图中方框内），隐藏了服务端信息。</strong></li>
 </ul>
-<p>例如 Maven 有三个内置的构建生命周期： <code>default</code>， <code>clean</code> 和 <code>site</code>。每个生命周期都由一系列的阶段所构成，比如 <code>default</code> 生命周期的一个简易阶段如下，完整的生命周期请参考官方文档：</p>
-<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g90w0y4xdpj30ty0frwk4.jpg" alt></p>
-<p>上图中的每一个节点都是一个 <code>阶段</code> ，阶段的执行是按顺序的，一个阶段执行完成之后才会执行下一个阶段。比如我们执行了一个如下的指令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn install</span><br></pre></td></tr></table></figure>
+<p>实际上，Proxy 在两种代理中做的事情都是替服务器代为收发请求和响应，不过从结构上看正好左右互换了一下，所以把后出现的那种代理方式称为反向代理了。</p>
+<h2 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h2><p>我们已经明确了所谓代理服务器的概念，那么接下来，Nginx 扮演了反向代理服务器的角色，它是依据什么样的规则进行请求分发的呢？不用的项目应用场景，分发的规则是否可以控制呢？</p>
+<p>这里提到的客户端发送的、Nginx 反向代理服务器接收到的请求数量，就是我们说的负载量。</p>
+<p>请求数量按照一定的规则进行分发，到不同的服务器处理的规则，就是一种均衡规则。</p>
+<p>所以将服务器接收到的请求按照规则分发的过程，称为负载均衡。</p>
+<p>负载均衡在实际项目操作过程中，有硬件负载均衡和软件负载均衡两种，硬件负载均衡也称为硬负载，如 F5 负载均衡，相对造价昂贵成本较高。</p>
+<p>但是数据的稳定性安全性等等有非常好的保障，如中国移动中国联通这样的公司才会选择硬负载进行操作。</p>
+<p>更多的公司考虑到成本原因，会选择使用软件负载均衡，软件负载均衡是利用现有的技术结合主机硬件实现的一种消息队列分发机制。</p>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g92ihfy5ldj30yg0gs13p.jpg" alt="负载均衡"></p>
+<h3 id="Nginx支持的负载均衡调度算法方式如下"><a href="#Nginx支持的负载均衡调度算法方式如下" class="headerlink" title="Nginx支持的负载均衡调度算法方式如下:"></a>Nginx支持的负载均衡调度算法方式如下:</h3><p><strong>①weight 轮询（默认）：</strong>接收到的请求按照顺序逐一分配到不同的后端服务器，即使在使用过程中，某一台后端服务器宕机，Nginx 会自动将该服务器剔除出队列，请求受理情况不会受到任何影响。</p>
+<p>这种方式下，可以给不同的后端服务器设置一个权重值（weight），用于调整不同的服务器上请求的分配率。</p>
+<p>权重数据越大，被分配到请求的几率越大；该权重值，主要是针对实际工作环境中不同的后端服务器硬件配置进行调整的。</p>
+<p><strong>②ip_hash：</strong>每个请求按照发起客户端的 ip 的 hash 结果进行匹配，这样的算法下一个固定 ip 地址的客户端总会访问到同一个后端服务器，这也在一定程度上解决了集群部署环境下 Session 共享的问题。</p>
+<p><strong>③fair：</strong>智能调整调度算法，动态的根据后端服务器的请求处理到响应的时间进行均衡分配。</p>
+<p>响应时间短处理效率高的服务器分配到请求的概率高，响应时间长处理效率低的服务器分配到的请求少，它是结合了前两者的优点的一种调度算法。</p>
+<p>但是需要注意的是 Nginx 默认不支持 fair 算法，如果要使用这种调度算法，请安装 upstream_fair 模块。</p>
+<p><strong>④url_hash：</strong>按照访问的 URL 的 hash 结果分配请求，每个请求的 URL 会指向后端固定的某个服务器，可以在 Nginx 作为静态服务器的情况下提高缓存效率。</p>
+<p>同样要注意 Nginx 默认不支持这种调度算法，要使用的话需要安装 Nginx 的 hash 软件包。</p>
+<h2 id="Web服务器对比"><a href="#Web服务器对比" class="headerlink" title="Web服务器对比"></a>Web服务器对比</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g92ijpt8x2j30v40l8n4f.jpg" alt></p>
 
-<p>他实际会执行 <code>install</code> 阶段之前的所有阶段，然后才会执行 <code>install</code> 阶段本身。</p>
-<p><strong>PS：当我们的项目是多模块的，我们在最顶层执行该指令时，Maven 会遍历每一个子模块，依次执行所有的阶段。</strong></p>
-<h2 id="坐标"><a href="#坐标" class="headerlink" title="坐标"></a>坐标</h2><p>说到 Maven 的坐标，我们首先就需要想到 <code>GAV</code> ，即 <code>groupId</code> <code>artifactId</code> <code>version</code>。由这三个属性就可以唯一确定一个jar包了。其中每个属性的意义如下：</p>
-<ul>
-<li>groupId：表示一个团体，可以是公司、组织等</li>
-<li>artifactId：表示团体下的某个项目</li>
-<li>version：表示某个项目的版本号</li>
-</ul>
-<p>他们之间的关系是一对多的，即每个团体下可以有多个项目，每个项目可以有多个版本号，可以用下面这张图来表示：</p>
-<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g90w2vih8nj30u50av0xo.jpg" alt="坐标"></p>
-<h2 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h2><p>Maven 核心特点之一是依赖管理。一旦我们开始处理多模块工程(包含数百个子模块或者子工程)的时候，模块 间的依赖关系就变得非常复杂，管理也变得很困难。针对此种情形，Maven 提供了一种高度控制的方法。</p>
-<h2 id="依赖传递"><a href="#依赖传递" class="headerlink" title="依赖传递"></a>依赖传递</h2><p>依赖传递很好理解，假设 B 依赖于 C，当 A 需要依赖 B 时，则 A 自动获得了对 C 的依赖。依赖传递有时非常好，当我们需要依赖很多jar包时，我们可以声明一个包来依赖所有的jar，然后只要依赖这个包就可以了。但是有时又很麻烦，因为很可能会造成依赖的冲突。</p>
-<h2 id="依赖冲突"><a href="#依赖冲突" class="headerlink" title="依赖冲突"></a>依赖冲突</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g90w4gu3flj30dy09amyj.jpg" alt="依赖冲突"></p>
-<p>当项目中依赖了a和c，而a和c都依赖了b，这时就造成了冲突。为了避免冲突的产生，Maven 使用了两种策略来解决冲突，分别是 <code>短路优先</code> 和 <code>声明优先</code> 。</p>
-<h3 id="短路优先"><a href="#短路优先" class="headerlink" title="短路优先"></a>短路优先</h3><p>短路优先的意识是，从项目一直到最终依赖的jar的距离，哪个距离短就依赖哪个，距离长的将被忽略掉。例如下图所示：</p>
-<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g90w5ilneyj30f20dcjtk.jpg" alt="短路优先"></p>
-<h3 id="声明优先"><a href="#声明优先" class="headerlink" title="声明优先"></a>声明优先</h3><p>声明优先的意思是，通过jar包声明的顺序来决定使用哪个，最先声明的jar包总是被选中，后声明的jar包则会被忽略，如下图所示：</p>
-<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g90w6cn3m3j30e80ckdi2.jpg" alt="声明优先"></p>
-<h2 id="依赖排除"><a href="#依赖排除" class="headerlink" title="依赖排除"></a>依赖排除</h2><p>如果我们只想引用我们直接依赖的jar包，而不想把间接依赖的jar包也引入的话，那可以使用依赖排除的方式，将间接引用的jar包排除掉，如下面的配置所示：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">exclusion</span>&gt;</span>       </span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>excluded.groupId<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span>       </span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>excluded-artifactId<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="依赖管理"><a href="#依赖管理" class="headerlink" title="依赖管理"></a>依赖管理</h2><h3 id="聚合"><a href="#聚合" class="headerlink" title="聚合"></a>聚合</h3><p>将多个项目同时运行就称为聚合，如下就是一个多模块的项目:</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">packaging</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">modules</span>&gt;</span> </span><br><span class="line">	<span class="tag">&lt;<span class="name">module</span>&gt;</span>module-1<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">module</span>&gt;</span>module-2<span class="tag">&lt;/<span class="name">module</span>&gt;</span>   </span><br><span class="line">  <span class="tag">&lt;<span class="name">module</span>&gt;</span>module-3<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">modules</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>聚合的优势在于可以在一个地方编译多个 pom 文件。</p>
-<p><strong>PS：聚合时 <code>packaging</code> 必须要是 pom</strong></p>
-<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>跟java类的继承类似，Maven 的继承特性也会继承父pom中的依赖，假设我们定义了一个父pom：</p>
-<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g917n046mij30iq0aqdhf.jpg" alt="父pom"></p>
-<p>然后在子pom中引入这个父pom：</p>
-<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g917o1fob2j30ip0b5wgb.jpg" alt="子pom"></p>
-<p>使用dependencyManagement，可对依赖进行管理。子类只要不引用这个里面写的groupId + artifactId，则不会添加依赖，这样防止造成重复加了包：如果不使用dependencyManagement，那么只要写了dependency，子pom中会全部添加到依赖中，而其中很多包可能都用不上。</p>
-<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p>插件是 Maven 的核心，所有执行的操作都是基于插件来完成的。</p>
-<p>为了让一个插件中可以实现众多的相类似的功能，Maven 为插件设定了目标，一个插件中有可能有多个目标。其实生命周期中的每个阶段都是由插件的一个具体目标来执行的</p>
-<p>例如可以用下面的方式配置一个插件：</p>
-<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g917sbs5tnj30ir0aawfm.jpg" alt="插件"></p>
-<p>配置目标 goal 的目的是：这样在执行 <code>mvnpackage</code> 的时候，就会自动执行 <code>mvn source:jar-no-fork</code>了，jar-no-fork这个目标是用来进行源码打包的。</p>
-<p>除了可以在build元素中配置插件，当然也可以在parent项目中，用pluginManagement来配置，然后在子项目继承即可使用。</p>
-<p><strong>PS：通过插件我们可以做很多事，比如通过mybatis-generator 我们可以生成很多DAO层的代码，再配合通用Mapper+lombok使用的话就可以使你的代码非常简洁，绝对的生产力工具！</strong></p>
-<h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><p>下面列举一些常用的maven指令:</p>
-<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g917wr7g50j30iq0gwjvu.jpg" alt="指令"></p>
-<h3 id="指令参数"><a href="#指令参数" class="headerlink" title="指令参数"></a>指令参数</h3><p>上面列举的只是比较通用的命令，其实很多命令都可以携带参数以执行更精准的任务。 Maven命令可携带的参数类型如下：</p>
-<h4 id="D-传入属性参数"><a href="#D-传入属性参数" class="headerlink" title="-D 传入属性参数"></a>-D 传入属性参数</h4><p>比如命令： <code>mvnpackage-Dmaven.test.skip=true</code>以 <code>-D</code>开头，将 <code>maven.test.skip</code> 的值设为 <code>true</code> ,就是告诉maven打包的时候跳过单元测试。</p>
-<p>同理， <code>mvn deploy-Dmaven.test.skip=true</code> 代表部署项目并跳过单元测试。</p>
-<h4 id="P-使用指定的Profile配置"><a href="#P-使用指定的Profile配置" class="headerlink" title="-P 使用指定的Profile配置"></a>-P 使用指定的Profile配置</h4><p>比如项目开发需要有多个环境，一般为开发，测试，预发，正式4个环境。</p>
-<h4 id="e-显示maven运行出错的信息"><a href="#e-显示maven运行出错的信息" class="headerlink" title="-e 显示maven运行出错的信息"></a>-e 显示maven运行出错的信息</h4><h4 id="o-离线执行命令-即不去远程仓库更新包"><a href="#o-离线执行命令-即不去远程仓库更新包" class="headerlink" title="-o 离线执行命令,即不去远程仓库更新包"></a>-o 离线执行命令,即不去远程仓库更新包</h4><h4 id="X-显示maven允许的debug信息"><a href="#X-显示maven允许的debug信息" class="headerlink" title="-X 显示maven允许的debug信息"></a>-X 显示maven允许的debug信息</h4><h4 id="U-强制去远程更新snapshot的插件或依赖，默认每天只更新一次"><a href="#U-强制去远程更新snapshot的插件或依赖，默认每天只更新一次" class="headerlink" title="-U 强制去远程更新snapshot的插件或依赖，默认每天只更新一次"></a>-U 强制去远程更新snapshot的插件或依赖，默认每天只更新一次</h4>
       
     </div>
 
@@ -716,7 +660,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="http://yxm666.github.io/2019/11/17/maven/" title="maven">http://yxm666.github.io/2019/11/17/maven/</a>
+    <a href="http://yxm666.github.io/2019/11/18/Nginx/" title="Nginx">http://yxm666.github.io/2019/11/18/Nginx/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -732,9 +676,7 @@
         
         <div class="post-tags">
           
-            <a href="/tags/Maven/" rel="tag"><i class="fa fa-tag"></i> Maven</a>
-          
-            <a href="/tags/工具/" rel="tag"><i class="fa fa-tag"></i> 工具</a>
+            <a href="/tags/中间件/" rel="tag"><i class="fa fa-tag"></i> 中间件</a>
           
         </div>
       
@@ -747,8 +689,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/11/05/排序算法/" rel="next" title="排序算法">
-                <i class="fa fa-chevron-left"></i> 排序算法
+              <a href="/2019/11/17/maven/" rel="next" title="maven">
+                <i class="fa fa-chevron-left"></i> maven
               </a>
             
           </div>
@@ -756,10 +698,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/11/18/Nginx/" rel="prev" title="Nginx">
-                Nginx <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -971,7 +909,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#没有Maven的生活"><span class="nav-text">没有Maven的生活</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#有了Maven"><span class="nav-text">有了Maven</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Maven的结构"><span class="nav-text">Maven的结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#仓库"><span class="nav-text">仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#本地仓库"><span class="nav-text">本地仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#远程仓库"><span class="nav-text">远程仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中央仓库"><span class="nav-text">中央仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#私有仓库"><span class="nav-text">私有仓库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#镜像"><span class="nav-text">镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生命周期"><span class="nav-text">生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#坐标"><span class="nav-text">坐标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#依赖"><span class="nav-text">依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#依赖传递"><span class="nav-text">依赖传递</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#依赖冲突"><span class="nav-text">依赖冲突</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#短路优先"><span class="nav-text">短路优先</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#声明优先"><span class="nav-text">声明优先</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#依赖排除"><span class="nav-text">依赖排除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#依赖管理"><span class="nav-text">依赖管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#聚合"><span class="nav-text">聚合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#继承"><span class="nav-text">继承</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件"><span class="nav-text">插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指令"><span class="nav-text">指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#指令参数"><span class="nav-text">指令参数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#D-传入属性参数"><span class="nav-text">-D 传入属性参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#P-使用指定的Profile配置"><span class="nav-text">-P 使用指定的Profile配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#e-显示maven运行出错的信息"><span class="nav-text">-e 显示maven运行出错的信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#o-离线执行命令-即不去远程仓库更新包"><span class="nav-text">-o 离线执行命令,即不去远程仓库更新包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#X-显示maven允许的debug信息"><span class="nav-text">-X 显示maven允许的debug信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#U-强制去远程更新snapshot的插件或依赖，默认每天只更新一次"><span class="nav-text">-U 强制去远程更新snapshot的插件或依赖，默认每天只更新一次</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Nginx的产生"><span class="nav-text">Nginx的产生</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#由于一下这几点，所以，Nginx火了"><span class="nav-text">由于一下这几点，所以，Nginx火了:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Nginx的用武之地"><span class="nav-text">Nginx的用武之地</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于代理"><span class="nav-text">关于代理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#正向代理"><span class="nav-text">正向代理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#正向代理的用途"><span class="nav-text">正向代理的用途:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反向代理"><span class="nav-text">反向代理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#反向代理的作用"><span class="nav-text">反向代理的作用:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目场景"><span class="nav-text">项目场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#负载均衡"><span class="nav-text">负载均衡</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Nginx支持的负载均衡调度算法方式如下"><span class="nav-text">Nginx支持的负载均衡调度算法方式如下:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web服务器对比"><span class="nav-text">Web服务器对比</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1177,7 +1115,7 @@
 
 <script>
   window.livereOptions = {
-    refer: '2019/11/17/maven/'
+    refer: '2019/11/18/Nginx/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
